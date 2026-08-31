@@ -244,7 +244,19 @@ screenshots/
 ```
 
 ---
+##Screenshots
 
+### 1. DVWA Brute Force Page
+
+![DVWA Brute Force](screenshots/01-dvwa-brute-force.png.png)
+
+### 2. Successful Curl Request
+
+![Curl Success](screenshots/02-curl-success.png.png)
+
+### 3. Brute Force Script Result
+
+![Script Result](screenshots/03-script-result.png.png)
 # 🔬 Technical Analysis
 
 The vulnerability exists because the authentication mechanism does not provide sufficient protection against repeated password attempts.
