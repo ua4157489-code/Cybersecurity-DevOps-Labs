@@ -1,277 +1,444 @@
-# ⚔️ DVWA — Web Application Security Arsenal
+# 🛡️ DVWA — Advanced Web Application Security Labs
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=24&duration=2500&pause=700&color=00FF00&center=true&vCenter=true&width=700&lines=%3E+Initializing+DVWA+Security+Lab...;%3E+Scanning+Attack+Surface...;%3E+Analyzing+Web+Vulnerabilities...;%3E+Exploitation+%7C+Detection+%7C+Remediation;%3E+Security+Research+Mode+%5BONLINE%5D">
+  <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=26&duration=2200&pause=500&color=00FF41&center=true&vCenter=true&width=850&lines=%3E+DVWA+Security+Laboratory;%3E+Initializing+Attack+Surface...;%3E+Analyzing+Web+Application+Vulnerabilities...;%3E+Exploitation+%7C+Detection+%7C+Remediation;%3E+Security+Research+Mode%3A+ACTIVE">
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/STATUS-ACTIVE-00ff00?style=for-the-badge&logo=github">
-  <img src="https://img.shields.io/badge/FOCUS-WEB%20SECURITY-red?style=for-the-badge">
-  <img src="https://img.shields.io/badge/DVWA-LAB-blue?style=for-the-badge">
-  <img src="https://img.shields.io/badge/LEVEL-INTERMEDIATE-orange?style=for-the-badge">
+  <img src="https://img.shields.io/badge/DVWA-Security%20Labs-ff003c?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Web%20Security-Active-00ff41?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Penetration%20Testing-Lab-00e5ff?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Linux-Docker-f5a623?style=for-the-badge">
 </p>
 
 <p align="center">
-  <b>🔴 ATTACK</b> ───────►
-  <b>🟡 ANALYZE</b> ───────►
-  <b>🟢 DEFEND</b>
+
+**🔎 Reconnaissance → ⚔️ Exploitation → 💥 Impact → 📊 Analysis → 🛡️ Remediation**
+
 </p>
 
 ---
 
-## 🖥️ SYSTEM STATUS
+## ⚡ SECURITY LAB // SYSTEM ONLINE
+
+<p align="center">
+
+<img src="https://capsule-render.vercel.app/api?type=rect&height=110&text=DVWA%20SECURITY%20OPERATIONS&fontSize=32&fontColor=00ff41&animation=twinkling&color=0d1117">
+
+</p>
 
 ```text
-╔══════════════════════════════════════════════════════════════╗
-║                 🛡️  DVWA SECURITY OPERATIONS                ║
-╠══════════════════════════════════════════════════════════════╣
-║                                                              ║
-║  SYSTEM             : DVWA                                   ║
-║  ENVIRONMENT        : Isolated Security Lab                  ║
-║  PLATFORM           : Linux + Docker                         ║
-║  PURPOSE            : Authorized Security Testing            ║
-║                                                              ║
-║  RECON               ████████████████████░░  90%             ║
-║  EXPLOITATION        █████████████████░░░░  80%             ║
-║  ANALYSIS            ██████████████████░░░  85%             ║
-║  REMEDIATION         ███████████████░░░░░  75%             ║
-║                                                              ║
-║  STATUS              : 🟢 ONLINE                             ║
-║  SECURITY MODE       : 🔐 AUTHORIZED LAB                     ║
-╚══════════════════════════════════════════════════════════════╝
+┌──────────────────────────────────────────────────────────────────────┐
+│                    🛡️ DVWA SECURITY LAB                             │
+├──────────────────────────────────────────────────────────────────────┤
+│                                                                      │
+│  TARGET       : Damn Vulnerable Web Application                     │
+│  ENVIRONMENT  : Isolated Local Laboratory                           │
+│  PLATFORM     : Linux + Docker                                      │
+│  PURPOSE      : Authorized Security Testing                         │
+│                                                                      │
+│  RECON        : ████████████████████  100%                          │
+│  TESTING      : ███████████████████░   95%                          │
+│  ANALYSIS     : ██████████████████░░   90%                          │
+│  DOCUMENTING  : ████████████████████  100%                          │
+│  REMEDIATION  : ███████████████░░░░░   75%                          │
+│                                                                      │
+│  STATUS       : 🟢 ACTIVE                                            │
+│  SECURITY     : 🔐 AUTHORIZED LAB                                    │
+└──────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-# 🧠 WHAT IS THIS?
+# 🎯 PROJECT MISSION
 
-**DVWA — Damn Vulnerable Web Application** is an intentionally vulnerable web application designed for security testing and learning.
+This repository documents a hands-on journey through **web application security testing using DVWA**.
 
-This repository documents my practical journey through web application vulnerabilities.
-
-But this isn't just:
+The objective is to understand vulnerabilities from both the **attacker and defender perspective**.
 
 ```text
-❌ Run Payload
-❌ Get Flag
-❌ Take Screenshot
-❌ Done
-```
-
-Instead:
-
-```text
-        🔎 RECON
-           │
-           ▼
-      🎯 IDENTIFY
-           │
-           ▼
-       ⚔️ EXPLOIT
-           │
-           ▼
-       💥 ANALYZE
-           │
-           ▼
-       📊 ASSESS
-           │
-           ▼
-       🛡️ REMEDIATE
-           │
-           ▼
-       🔄 RETEST
-           │
-           ▼
-       ✅ SECURE
+                     WEB APPLICATION
+                            │
+                            ▼
+                     🔎 RECON
+                            │
+                            ▼
+                  🎯 FIND VULNERABILITY
+                            │
+                            ▼
+                     ⚔️ TEST / EXPLOIT
+                            │
+                            ▼
+                       💥 IMPACT
+                            │
+                            ▼
+                     📊 INVESTIGATE
+                            │
+                            ▼
+                    🛡️ REMEDIATE
+                            │
+                            ▼
+                       🔄 RETEST
+                            │
+                            ▼
+                       ✅ SECURE
 ```
 
 ---
 
-# 🌐 ATTACK SURFACE
+# 🖥️ ATTACK SIMULATION
+
+<p align="center">
+
+<img src="https://media.giphy.com/media/xT9IgzoKnwFNmISR8I/giphy.gif" width="700">
+
+</p>
+
+### Attack Flow
+
+```text
+┌───────────────┐
+│ 👨‍💻 TESTER    │
+└───────┬───────┘
+        │
+        │ HTTP REQUEST
+        ▼
+┌───────────────────┐
+│ 🌐 DVWA WEB APP   │
+└─────────┬─────────┘
+          │
+     ┌────┼───────────────┐
+     │    │               │
+     ▼    ▼               ▼
+   💉 SQL  ☣️ XSS       💻 CMD
+   INJECT  ATTACK      INJECTION
+     │    │               │
+     └────┼───────────────┘
+          │
+          ▼
+      💥 IMPACT
+          │
+          ▼
+      🔎 ANALYSIS
+          │
+          ▼
+      🛡️ DEFENSE
+```
+
+> **Note:** The visual above represents the security-testing workflow conceptually. All practical testing is performed only against the intentionally vulnerable local DVWA environment.
+
+---
+
+# 🌐 ATTACK SURFACE MAP
 
 ```mermaid
-flowchart TB
+flowchart LR
 
-    USER["👨‍💻 Security Researcher"]
+    A["👨‍💻 Security Tester"]
 
-    USER --> WEB["🌐 Web Application"]
+    A --> B["🌐 DVWA"]
 
-    WEB --> AUTH["🔐 Authentication"]
-    WEB --> INPUT["⌨️ User Input"]
-    WEB --> FILE["📁 File Handling"]
-    WEB --> SESSION["🍪 Sessions"]
-    WEB --> DB["🗄️ Database"]
-    WEB --> HTTP["📡 HTTP Requests"]
+    B --> C["🔐 Authentication"]
+    B --> D["⌨️ User Input"]
+    B --> E["📁 File Handling"]
+    B --> F["🍪 Session Management"]
+    B --> G["🗄️ Database"]
+    B --> H["🌍 Client Browser"]
 
-    INPUT --> SQL["💉 SQL Injection"]
-    INPUT --> CMD["💻 Command Injection"]
-    INPUT --> XSS["☣️ Cross-Site Scripting"]
+    C --> C1["🔨 Brute Force"]
+    C --> C2["🧩 CAPTCHA"]
 
-    FILE --> FI["📂 File Inclusion"]
-    FILE --> FU["⬆️ File Upload"]
+    D --> D1["💉 SQL Injection"]
+    D --> D2["💻 Command Injection"]
+    D --> D3["☣️ XSS"]
 
-    AUTH --> BF["🔨 Brute Force"]
-    SESSION --> SID["🎫 Weak Session IDs"]
+    E --> E1["📂 File Inclusion"]
+    E --> E2["⬆️ File Upload"]
 
-    style USER stroke-width:3px
-    style WEB stroke-width:3px
-    style SQL stroke-width:2px
-    style CMD stroke-width:2px
-    style XSS stroke-width:2px
+    F --> F1["🎫 Weak Session IDs"]
+
+    H --> H1["🔄 CSRF"]
+    H --> H2["🧠 DOM XSS"]
+
+    style A stroke-width:3px
+    style B stroke-width:3px
+    style D1 stroke-width:2px
+    style D2 stroke-width:2px
+    style D3 stroke-width:2px
 ```
 
 ---
 
-# ⚔️ LAB OPERATIONS
+# ⚔️ VULNERABILITY MATRIX
 
-## 🔴 OFFENSIVE SECURITY
+|  ID | Vulnerability           | Attack Surface | Category         | Status |
+| :-: | ----------------------- | -------------- | ---------------- | :----: |
+|  01 | 🔨 Brute Force          | Login          | Authentication   |   🟢   |
+|  02 | 💻 Command Injection    | User Input     | Injection        |   🟢   |
+|  03 | 🔄 CSRF                 | Forms          | Client-Side      |   🟢   |
+|  04 | 📂 File Inclusion       | Parameters     | File Handling    |   🟢   |
+|  05 | ⬆️ File Upload          | Upload         | File Handling    |   🟢   |
+|  06 | 🧩 CAPTCHA              | Authentication | Validation       |   🟡   |
+|  07 | 💉 SQL Injection        | Database       | Injection        |   🟡   |
+|  08 | 🕵️ Blind SQL Injection | Database       | Injection        |   🟡   |
+|  09 | ☣️ Reflected XSS        | Input          | XSS              |   🟡   |
+|  10 | 💾 Stored XSS           | Input/Database | XSS              |   🟡   |
+|  11 | 🧠 DOM XSS              | Browser        | XSS              |   🟡   |
+|  12 | 🍪 Weak Session IDs     | Session        | Session Security |   🟡   |
+|  13 | 🔑 Authorization Bypass | Access Control | Authorization    |   🟡   |
+|  14 | 🛡️ CSP Bypass          | Browser        | Security Headers |   🟡   |
+|  15 | 📜 JavaScript           | Client-Side    | Client Security  |   🟡   |
 
-| Lab                     | Attack Surface | Technique               | Status |
-| ----------------------- | -------------- | ----------------------- | :----: |
-| 🔐 Brute Force          | Login          | Credential Testing      |   🟢   |
-| 💻 Command Injection    | Input          | OS Command Execution    |   🟢   |
-| 🔄 CSRF                 | Forms          | Request Forgery         |   🟢   |
-| 📂 File Inclusion       | Parameters     | LFI / RFI               |   🟢   |
-| 📁 File Upload          | Upload         | Malicious File Testing  |   🟢   |
-| 🧩 CAPTCHA              | Authentication | Validation Bypass       |   🟡   |
-| 💉 SQL Injection        | Database       | SQL Manipulation        |   🟡   |
-| 🕵️ Blind SQL Injection | Database       | Blind Enumeration       |   🟡   |
-| ☣️ Reflected XSS        | Input          | Script Injection        |   🟡   |
-| 💾 Stored XSS           | Database       | Persistent Injection    |   🟡   |
-| 🌐 DOM XSS              | Browser        | Client-Side Injection   |   🟡   |
-| 🍪 Weak Session IDs     | Session        | Session Analysis        |   🟡   |
-| 🔑 Authorization        | Access Control | Privilege Testing       |   🟡   |
-| 🛡️ CSP Bypass          | Browser        | Security Control Bypass |   🟡   |
-
----
-
-# 📊 VULNERABILITY RADAR
+### Legend
 
 ```text
-                         WEB SECURITY
-                              │
-          ┌───────────────────┼───────────────────┐
-          │                   │                   │
-       🔐 AUTH             💉 INPUT            📁 FILE
-          │                   │                   │
-      Brute Force        SQL Injection       File Upload
-      CAPTCHA            Command Injection   File Inclusion
-      Sessions           XSS
-          │                   │                   │
-          └───────────────────┼───────────────────┘
-                              │
-                        🌐 CLIENT SIDE
-                              │
-                    ┌─────────┴─────────┐
-                    │                   │
-                 DOM XSS             CSRF
-                    │                   │
-                    └─────────┬─────────┘
-                              │
-                         🛡️ DEFENSE
+🟢 COMPLETED
+🟡 IN PROGRESS
+⚪ PLANNED
+🔴 HIGH RISK
 ```
 
 ---
 
-# 🧪 MY LAB WORKFLOW
+# 💉 INJECTION ATTACKS
 
-### `01` 🔎 RECONNAISSANCE
-
-```bash
-Identify → Enumerate → Understand
+```text
+                    INJECTION
+                       │
+        ┌──────────────┼──────────────┐
+        │              │              │
+        ▼              ▼              ▼
+    💉 SQLi          💻 CMDi        ☣️ XSS
+        │              │              │
+        ▼              ▼              ▼
+    Database        Operating       Browser
+    Manipulation    System          Execution
+        │              │              │
+        └──────────────┼──────────────┘
+                       ▼
+                  💥 IMPACT
 ```
 
-Discover:
+### Security Questions
+
+For every injection vulnerability:
+
+* What input is vulnerable?
+* How does the application process it?
+* What makes the input dangerous?
+* What is the potential impact?
+* How can it be detected?
+* How should it be remediated?
+
+---
+
+# 📁 FILE ATTACKS
+
+```text
+                 FILE HANDLING
+                      │
+             ┌────────┴────────┐
+             │                 │
+             ▼                 ▼
+       📂 FILE INCLUSION   ⬆️ FILE UPLOAD
+             │                 │
+             ▼                 ▼
+       Local/Remote        Malicious
+       Resource Abuse      File Handling
+             │                 │
+             └────────┬────────┘
+                      ▼
+                  💥 IMPACT
+```
+
+---
+
+# 🔐 AUTHENTICATION & SESSION SECURITY
+
+```text
+       👤 USER
+         │
+         ▼
+   🔐 LOGIN SYSTEM
+         │
+    ┌────┴────┐
+    │         │
+    ▼         ▼
+ 🔨 Brute    🧩 CAPTCHA
+  Force       Bypass
+    │         │
+    └────┬────┘
+         ▼
+    🍪 SESSION
+         │
+         ▼
+ 🎫 Weak Session IDs
+```
+
+---
+
+# ☣️ CROSS-SITE SCRIPTING
+
+```text
+              USER INPUT
+                  │
+                  ▼
+           ┌──────────────┐
+           │ WEB SERVER   │
+           └──────┬───────┘
+                  │
+         ┌────────┼────────┐
+         │        │        │
+         ▼        ▼        ▼
+      Reflected Stored     DOM
+         XSS       XSS      XSS
+         │         │        │
+         └─────────┼────────┘
+                   ▼
+              🌐 BROWSER
+                   │
+                   ▼
+                💥 IMPACT
+```
+
+---
+
+# 🧪 STANDARD TESTING METHODOLOGY
+
+Every lab follows a repeatable methodology.
+
+## `01` 🔎 RECONNAISSANCE
+
+Identify:
 
 * Application functionality
 * Parameters
 * Endpoints
-* Technologies
+* Input fields
 * Authentication mechanisms
-* Input points
+* Technologies
+* Attack surface
 
 ---
 
-### `02` 🎯 VULNERABILITY DISCOVERY
+## `02` 🎯 IDENTIFICATION
 
-```bash
-Input → Observe → Manipulate → Validate
-```
-
-Look for:
+Understand normal application behavior before testing.
 
 ```text
-SQL Injection
-XSS
-Command Injection
-File Inclusion
-File Upload
-CSRF
-Authentication Weaknesses
-Authorization Issues
-Session Weaknesses
+NORMAL REQUEST
+      ↓
+OBSERVE RESPONSE
+      ↓
+MODIFY INPUT
+      ↓
+COMPARE RESPONSE
+      ↓
+IDENTIFY ANOMALY
 ```
 
 ---
 
-### `03` ⚔️ CONTROLLED EXPLOITATION
+## `03` ⚔️ CONTROLLED TESTING
+
+Perform security testing against the intentionally vulnerable DVWA instance.
 
 ```text
-Normal Request
-      ↓
-Modified Request
-      ↓
-Application Response
-      ↓
-Vulnerability Confirmed
+HTTP REQUEST
+     │
+     ▼
+MODIFIED INPUT
+     │
+     ▼
+APPLICATION
+     │
+     ▼
+HTTP RESPONSE
+     │
+     ▼
+VULNERABILITY VALIDATION
 ```
-
-All testing is performed inside an **isolated and authorized laboratory environment**.
 
 ---
 
-### `04` 📸 EVIDENCE COLLECTION
+## `04` 📸 EVIDENCE
 
-Each lab contains visual evidence such as:
+Every important finding is documented with visual evidence.
 
 ```text
-🖥️ Application
-      ↓
-🌐 Request
-      ↓
-📨 Response
-      ↓
-⚔️ Payload
-      ↓
-💥 Impact
-      ↓
-🛡️ Fix
+🖥️ DVWA Interface
+       ↓
+🌐 HTTP Request
+       ↓
+📨 HTTP Response
+       ↓
+⚔️ Test Result
+       ↓
+💥 Demonstrated Impact
 ```
 
 ---
 
-### `05` 🛡️ REMEDIATION
+## `05` 📊 ANALYSIS
 
-The goal isn't simply to exploit.
+Each finding is analyzed for:
 
-The final question is:
-
-> **How would we prevent this attack in a real application?**
+* Root cause
+* Attack vector
+* Exploitability
+* Security impact
+* Confidentiality impact
+* Integrity impact
+* Availability impact
 
 ---
 
-# 📂 REPOSITORY ARCHITECTURE
+## `06` 🛡️ REMEDIATION
+
+The lab doesn't end after exploitation.
+
+The objective is to understand how the vulnerability can be prevented through:
+
+* Input validation
+* Output encoding
+* Parameterized queries
+* Authentication controls
+* Authorization checks
+* Secure file handling
+* Security headers
+* Session hardening
+* Secure configuration
+
+---
+
+## `07` 🔄 RETEST
+
+```text
+VULNERABILITY
+      ↓
+REMEDIATION
+      ↓
+RETEST
+      ↓
+VULNERABILITY BLOCKED
+      ↓
+✅ VERIFIED
+```
+
+---
+
+# 📂 REPOSITORY STRUCTURE
 
 ```text
 DVWA/
 │
 ├── 📁 01-Brute-Force/
-│   ├── 📄 README.md
-│   ├── 📄 commands.md
-│   ├── 📄 findings.md
-│   ├── 📄 methodology.md
-│   ├── 📄 remediation.md
-│   ├── 📄 lessons-learned.md
+│   ├── README.md
+│   ├── commands.md
+│   ├── methodology.md
+│   ├── findings.md
+│   ├── remediation.md
+│   ├── lessons-learned.md
 │   └── 📸 screenshots/
 │
 ├── 📁 02-Command-Injection/
@@ -295,190 +462,338 @@ DVWA/
 ├── 📁 08-Blind-SQL-Injection/
 │   └── ...
 │
+├── 📁 09-XSS-DOM/
+│   └── ...
+│
+├── 📁 10-XSS-Reflected/
+│   └── ...
+│
+├── 📁 11-XSS-Stored/
+│   └── ...
+│
 └── 📄 README.md
 ```
 
 ---
 
-# 🛠️ SECURITY TOOLKIT
+# 📸 LAB EVIDENCE
 
-<p align="center">
+Each completed lab contains screenshots documenting the testing process.
 
-<img src="https://skillicons.dev/icons?i=linux,docker,git,github,python,bash">
-
-</p>
-
-<p align="center">
-
-<img src="https://img.shields.io/badge/Nmap-Reconnaissance-111111?style=flat-square">
-<img src="https://img.shields.io/badge/cURL-HTTP%20Testing-111111?style=flat-square">
-<img src="https://img.shields.io/badge/Wireshark-Packet%20Analysis-111111?style=flat-square">
-<img src="https://img.shields.io/badge/Burp%20Suite-Web%20Testing-111111?style=flat-square">
-<img src="https://img.shields.io/badge/OWASP%20ZAP-Web%20Security-111111?style=flat-square">
-<img src="https://img.shields.io/badge/Docker-Lab%20Environment-111111?style=flat-square">
-
-</p>
-
----
-
-# 🧩 EACH LAB CONTAINS
-
-```text
-┌─────────────────────────────────────────┐
-│             🔬 LAB REPORT               │
-├─────────────────────────────────────────┤
-│                                         │
-│  🎯 Objective                           │
-│  🔎 Methodology                         │
-│  🛠️ Commands                            │
-│  ⚔️ Exploitation                        │
-│  📸 Screenshots                         │
-│  💥 Impact                              │
-│  📊 Findings                            │
-│  🛡️ Remediation                        │
-│  📚 Lessons Learned                    │
-│                                         │
-└─────────────────────────────────────────┘
-```
-
----
-
-# 📸 VISUAL EVIDENCE
-
-<p align="center">
-
-<img src="https://capsule-render.vercel.app/api?type=rect&height=100&text=EVIDENCE%20COLLECTION&fontSize=30&fontColor=ffffff&animation=fadeIn">
-
-</p>
-
-Screenshots are organized inside each individual lab.
-
-Example:
+### Example
 
 ```text
 05-File-Upload/
 │
 └── screenshots/
-    ├── 01-dvwa-upload-page.png
+    │
+    ├── 01-dvwa-upload-interface.png
     ├── 02-upload-request.png
-    ├── 03-successful-upload.png
-    └── 04-impact.png
+    ├── 03-upload-response.png
+    ├── 04-successful-test.png
+    └── 05-impact.png
 ```
 
 ---
 
-# 📈 SECURITY MATURITY
+# 🧰 SECURITY TOOLKIT
+
+<p align="center">
+
+<img src="https://skillicons.dev/icons?i=linux,docker,bash,python,git,github">
+
+</p>
+
+| Tool           | Purpose                         |
+| -------------- | ------------------------------- |
+| 🐧 Linux       | Security laboratory             |
+| 🐳 Docker      | DVWA deployment                 |
+| 🔎 Nmap        | Network reconnaissance          |
+| 🌐 cURL        | HTTP testing                    |
+| 🦈 Wireshark   | Traffic analysis                |
+| 🕷️ Burp Suite | Web security testing            |
+| 🛡️ OWASP ZAP  | Web application testing         |
+| 🐍 Python      | Automation & security scripting |
+| 🔧 Git         | Version control                 |
+
+---
+
+# 📊 SECURITY TESTING DASHBOARD
 
 ```text
-RECONNAISSANCE
-████████████████████████████████████████ 100%
-
-VULNERABILITY DISCOVERY
-████████████████████████████████████░░░░  90%
-
-EXPLOITATION
-████████████████████████████████░░░░░░░░  80%
-
-ANALYSIS
-██████████████████████████████████░░░░░░  85%
-
-REMEDIATION
-██████████████████████████████░░░░░░░░░░  75%
-
-DOCUMENTATION
-██████████████████████████████████████░░  95%
+╔══════════════════════════════════════════════════════╗
+║                 SECURITY METRICS                     ║
+╠══════════════════════════════════════════════════════╣
+║                                                      ║
+║  🔎 Reconnaissance      ████████████████████  100%   ║
+║  🎯 Discovery           ███████████████████░   95%   ║
+║  ⚔️ Exploitation        █████████████████░░░   85%   ║
+║  📊 Analysis            ██████████████████░░   90%   ║
+║  📸 Documentation       ████████████████████  100%   ║
+║  🛡️ Remediation         ███████████████░░░░░   75%   ║
+║                                                      ║
+╚══════════════════════════════════════════════════════╝
 ```
 
 ---
 
-# 🧠 SKILLS DEVELOPED
+# 🧠 ATTACKER VS DEFENDER
 
-```text
-                 CYBERSECURITY
-                      │
-        ┌─────────────┼─────────────┐
-        │             │             │
-     OFFENSIVE     ANALYSIS      DEFENSIVE
-        │             │             │
-     Recon         HTTP           Hardening
-     Exploit       Logs           Validation
-     Payloads      Evidence       Monitoring
-     Enumeration   Impact         Remediation
-        │             │             │
-        └─────────────┼─────────────┘
-                      │
-                SECURITY MINDSET
+| 🔴 Attacker Perspective | 🟢 Defender Perspective |
+| ----------------------- | ----------------------- |
+| Find attack surface     | Reduce attack surface   |
+| Identify weak input     | Validate input          |
+| Manipulate requests     | Monitor requests        |
+| Exploit vulnerability   | Block exploitation      |
+| Demonstrate impact      | Reduce impact           |
+| Maintain access         | Enforce authorization   |
+| Abuse sessions          | Secure sessions         |
+| Exfiltrate data         | Protect sensitive data  |
+
+---
+
+# 🔬 VULNERABILITY LIFECYCLE
+
+```mermaid
+flowchart TD
+
+    A["🔎 Reconnaissance"] --> B["🎯 Discovery"]
+    B --> C["⚔️ Controlled Exploitation"]
+    C --> D["💥 Impact Assessment"]
+    D --> E["📊 Risk Analysis"]
+    E --> F["🛡️ Remediation"]
+    F --> G["🔄 Retesting"]
+    G --> H["✅ Verification"]
+
+    H --> A
 ```
 
 ---
 
-# 🏆 END GOAL
+# 🏗️ LAB ARCHITECTURE
 
-This project is part of my journey toward becoming a stronger **Cybersecurity / SOC / Security Operations professional** with practical understanding of how web vulnerabilities are:
+```mermaid
+flowchart LR
 
-```text
-        DISCOVERED
-            ↓
-        EXPLOITED
-            ↓
-        ANALYZED
-            ↓
-        DETECTED
-            ↓
-        REMEDIATED
-            ↓
-        VERIFIED
+    U["👨‍💻 Security Researcher"]
+
+    U --> T["🛠️ Security Tools"]
+
+    T --> N["🔎 Recon"]
+    T --> W["🌐 HTTP Testing"]
+    T --> A["⚔️ Application Testing"]
+
+    N --> D["🐳 Docker"]
+    W --> D
+    A --> D
+
+    D --> V["🎯 DVWA"]
+
+    V --> L["📜 Logs / Responses"]
+    L --> E["📸 Evidence"]
+    E --> R["📝 Report"]
+
+    R --> M["🛡️ Remediation"]
 ```
 
 ---
 
-# ⚠️ ETHICAL USE
+# 📚 KNOWLEDGE AREAS
 
-> ⚠️ **Educational & Authorized Security Testing Only**
-
-DVWA is intentionally vulnerable.
-
-All testing documented in this repository is intended for:
-
-* 🧪 Local labs
-* 🎓 Education
-* 🔬 Security research
-* 🛡️ Defensive learning
-* ✅ Authorized environments
-
-**Never test systems you do not own or have explicit permission to assess.**
+```text
+WEB APPLICATION SECURITY
+│
+├── 🔐 Authentication
+│   ├── Brute Force
+│   └── CAPTCHA
+│
+├── 🔑 Authorization
+│   └── Access Control
+│
+├── 💉 Injection
+│   ├── SQL Injection
+│   ├── Blind SQL Injection
+│   └── Command Injection
+│
+├── ☣️ XSS
+│   ├── Reflected
+│   ├── Stored
+│   └── DOM
+│
+├── 📁 File Security
+│   ├── File Upload
+│   └── File Inclusion
+│
+├── 🍪 Session Security
+│   └── Weak Session IDs
+│
+└── 🌐 Client Security
+    ├── CSRF
+    ├── CSP
+    └── JavaScript Security
+```
 
 ---
 
-# 🟢 CURRENT MISSION
+# 🏆 SKILLS DEMONSTRATED
+
+### 🔴 Offensive Security
+
+* Web reconnaissance
+* Vulnerability discovery
+* HTTP manipulation
+* Injection testing
+* XSS testing
+* Authentication testing
+* File handling testing
+* Session testing
+* Access-control testing
+
+### 🟡 Security Analysis
+
+* Request/response analysis
+* Attack-surface mapping
+* Root-cause analysis
+* Impact assessment
+* Evidence collection
+* Security documentation
+
+### 🟢 Defensive Security
+
+* Input validation
+* Output encoding
+* Secure authentication
+* Access-control enforcement
+* Secure file handling
+* Session hardening
+* Security headers
+* Vulnerability remediation
+
+---
+
+# 📋 LAB REPORT FORMAT
+
+Every lab follows a professional security-report structure:
 
 ```text
-╔══════════════════════════════════════════════╗
-║                                              ║
-║       🛡️  DVWA SECURITY LAB                 ║
-║                                              ║
-║       [███████████████████░░░]  IN PROGRESS  ║
-║                                              ║
-║       🔎 Recon        [✓]                    ║
-║       ⚔️ Exploit      [✓]                    ║
-║       📊 Analyze      [✓]                    ║
-║       📸 Document     [✓]                    ║
-║       🛡️ Remediate    [→]                    ║
-║                                              ║
-║              SYSTEM: ACTIVE                 ║
-║              MODE: LEARNING                 ║
-║                                              ║
-╚══════════════════════════════════════════════╝
+┌───────────────────────────────────────┐
+│             🔬 LAB REPORT             │
+├───────────────────────────────────────┤
+│ 🎯 Objective                          │
+│ 🔎 Reconnaissance                     │
+│ 🧪 Methodology                        │
+│ ⚔️ Testing / Exploitation             │
+│ 📸 Evidence                           │
+│ 💥 Impact                             │
+│ 📊 Findings                           │
+│ 🛡️ Remediation                       │
+│ 🔄 Retesting                          │
+│ 📚 Lessons Learned                    │
+└───────────────────────────────────────┘
+```
+
+---
+
+# 🎓 LEARNING OUTCOMES
+
+By completing these labs, I am building practical understanding of:
+
+* How vulnerable web applications behave
+* How attackers identify weaknesses
+* How HTTP requests can be manipulated
+* How common web vulnerabilities work
+* How vulnerabilities affect confidentiality, integrity and availability
+* How to collect security evidence
+* How to write professional vulnerability reports
+* How vulnerabilities can be detected and mitigated
+
+---
+
+# 🚀 FUTURE EXPANSION
+
+```text
+DVWA
+ │
+ ├──► OWASP Top 10
+ │
+ ├──► Burp Suite
+ │
+ ├──► OWASP ZAP
+ │
+ ├──► API Security
+ │
+ ├──► Web Enumeration
+ │
+ ├──► Vulnerability Assessment
+ │
+ ├──► Security Automation
+ │
+ └──► SOC Detection & Response
+```
+
+The long-term goal is to connect **offensive testing with defensive monitoring**, allowing vulnerabilities and attack behavior to be understood from both perspectives.
+
+---
+
+# ⚠️ ETHICAL & LEGAL DISCLAIMER
+
+> **This project is for educational and authorized security testing only.**
+
+DVWA is intentionally vulnerable and should be deployed in an isolated laboratory environment.
+
+The techniques documented here must **never** be used against systems, applications, accounts, or networks without explicit authorization.
+
+```text
+AUTHORIZED ENVIRONMENT
+        ↓
+      TEST
+        ↓
+     ANALYZE
+        ↓
+    DOCUMENT
+        ↓
+     DEFEND
+```
+
+---
+
+# 🟢 MISSION STATUS
+
+<p align="center">
+
+<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=20&duration=1800&pause=600&color=00FF41&center=true&vCenter=true&width=700&lines=%5B+SYSTEM+ONLINE+%5D;%5B+LAB+ACTIVE+%5D;%5B+SECURITY+TESTING+IN+PROGRESS+%5D;%5B+LEARN+THE+ATTACK.+BUILD+THE+DEFENSE.+%5D">
+
+</p>
+
+```text
+╔══════════════════════════════════════════════════════╗
+║                                                      ║
+║       🔐 DVWA SECURITY LABORATORY                   ║
+║                                                      ║
+║       STATUS : 🟢 ONLINE                            ║
+║       MODE   : 🔬 RESEARCH                          ║
+║       TARGET : 🎯 DVWA                              ║
+║       ACCESS : 🔐 AUTHORIZED                        ║
+║                                                      ║
+║       ATTACK  →  ANALYZE  →  DEFEND                 ║
+║                                                      ║
+╚══════════════════════════════════════════════════════╝
 ```
 
 ---
 
 <p align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&height=120&section=footer&text=Hack%20to%20Learn%20%7C%20Learn%20to%20Defend&fontSize=24&animation=twinkling">
+<img src="https://capsule-render.vercel.app/api?type=waving&height=140&section=footer&text=ATTACK%20%7C%20ANALYZE%20%7C%20DEFEND&fontSize=28&fontColor=00ff41&animation=twinkling&color=0d1117">
 
 </p>
 
 <p align="center">
-  <b>🔐 Security is not just about finding vulnerabilities — it's about understanding them.</b>
+
+### 🔐 Learn the Attack. Understand the Vulnerability. Build the Defense.
+
+</p>
+
+<p align="center">
+  <sub>DVWA Security Labs • Web Application Security • Vulnerability Assessment • Security Research</sub>
 </p>
