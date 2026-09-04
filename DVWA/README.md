@@ -169,34 +169,33 @@ flowchart LR
 
 ---
 
-# ⚔️ VULNERABILITY MATRIX
+# ⚔️ Vulnerability Matrix
 
-|  ID | Vulnerability           | Attack Surface | Category         | Status |
+| ID | Vulnerability | Attack Surface | Category | Status |
 | :-: | ----------------------- | -------------- | ---------------- | :----: |
-|  01 | 🔨 Brute Force          | Login          | Authentication   |   🟢   |
-|  02 | 💻 Command Injection    | User Input     | Injection        |   🟢   |
-|  03 | 🔄 CSRF                 | Forms          | Client-Side      |   🟢   |
-|  04 | 📂 File Inclusion       | Parameters     | File Handling    |   🟢   |
-|  05 | ⬆️ File Upload          | Upload         | File Handling    |   🟢   |
-|  06 | 🧩 CAPTCHA              | Authentication | Validation       |   🟡   |
-|  07 | 💉 SQL Injection        | Database       | Injection        |   🟡   |
-|  08 | 🕵️ Blind SQL Injection | Database       | Injection        |   🟡   |
-|  09 | ☣️ Reflected XSS        | Input          | XSS              |   🟡   |
-|  10 | 💾 Stored XSS           | Input/Database | XSS              |   🟡   |
-|  11 | 🧠 DOM XSS              | Browser        | XSS              |   🟡   |
-|  12 | 🍪 Weak Session IDs     | Session        | Session Security |   🟡   |
-|  13 | 🔑 Authorization Bypass | Access Control | Authorization    |   🟡   |
-|  14 | 🛡️ CSP Bypass          | Browser        | Security Headers |   🟡   |
-|  15 | 📜 JavaScript           | Client-Side    | Client Security  |   🟡   |
+| 01 | 🔨 Brute Force | Login | Authentication | 🟢 |
+| 02 | 💻 Command Injection | User Input | Injection | 🟢 |
+| 03 | 🔄 CSRF | Forms | Client-Side | 🟢 |
+| 04 | 📂 File Inclusion | Parameters | File Handling | 🟢 |
+| 05 | ⬆️ File Upload | Upload | File Handling | 🟢 |
+| 06 | 🧩 CAPTCHA | Authentication | Validation | 🟢 |
+| 07 | 💉 SQL Injection | Database | Injection | 🟢 |
+| 08 | 🕵️ Blind SQL Injection | Database | Injection | 🟢 |
+| 09 | ☣️ Reflected XSS | Input | XSS | 🟢 |
+| 10 | 💾 Stored XSS | Input/Database | XSS | 🟢 |
+| 11 | 🧠 DOM XSS | Browser | XSS | 🟢 |
+| 12 | 🍪 Weak Session IDs | Session | Session Security | 🟢 |
+| 13 | 🔑 Authorization Bypass | Access Control | Authorization | 🟢 |
+| 14 | 🛡️ CSP Bypass | Browser | Security Headers | 🟢 |
+| 15 | 📜 JavaScript | Client-Side | Client Security | 🟢 |
 
 ### Legend
 
-```text
-🟢 COMPLETED
-🟡 IN PROGRESS
-⚪ PLANNED
-🔴 HIGH RISK
-```
+- 🟢 **Complete / Verified**
+- 🟡 **In Progress**
+- 🔴 **Not Started / Incomplete**
+
+> 🟢 **15/15 Labs Complete — 100%**
 
 ---
 
