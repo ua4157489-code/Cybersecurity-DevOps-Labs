@@ -1,0 +1,15 @@
+HTTP/1.1 302 Found
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Location: https://github.com/juice-shop/juice-shop.attacker.com
+Vary: Accept, Accept-Encoding
+Content-Type: text/plain; charset=utf-8
+Content-Length: 75
+Date: Sat, 05 Sep 2026 14:06:50 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+Found. Redirecting to https://github.com/juice-shop/juice-shop.attacker.com

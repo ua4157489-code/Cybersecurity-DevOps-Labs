@@ -1,0 +1,15 @@
+HTTP/1.1 302 Found
+Access-Control-Allow-Origin: *
+X-Content-Type-Options: nosniff
+X-Frame-Options: SAMEORIGIN
+Feature-Policy: payment 'self'
+X-Recruiting: /#/jobs
+Location: https://evil-attacker-site.com/?x=https://github.com/juice-shop/juice-shop
+Vary: Accept, Accept-Encoding
+Content-Type: text/plain; charset=utf-8
+Content-Length: 96
+Date: Sat, 05 Sep 2026 14:07:31 GMT
+Connection: keep-alive
+Keep-Alive: timeout=5
+
+Found. Redirecting to https://evil-attacker-site.com/?x=https://github.com/juice-shop/juice-shop
