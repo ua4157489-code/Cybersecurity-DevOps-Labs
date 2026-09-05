@@ -1,7 +1,6 @@
 <div align="center">
 
 # 🔴 OWASP TOP 10
-
 ## WEB APPLICATION SECURITY LABS
 
 ```text
@@ -14,17 +13,16 @@
 ```
 
 ### 🍊 OWASP JUICE SHOP × OFFENSIVE SECURITY
-
 **Hands-On Web Application Penetration Testing • Vulnerability Research • Security Analysis**
 
 <br>
 
-![OWASP](https://img.shields.io/badge/OWASP-TOP%2010-red?style=for-the-badge\&logo=owasp)
+![OWASP](https://img.shields.io/badge/OWASP-TOP%2010-red?style=for-the-badge&logo=owasp)
 ![Target](https://img.shields.io/badge/TARGET-OWASP%20JUICE%20SHOP-orange?style=for-the-badge)
 ![Security](https://img.shields.io/badge/FOCUS-WEB%20APPLICATION%20SECURITY-black?style=for-the-badge)
-![Labs](https://img.shields.io/badge/LABS-3%2F10-success?style=for-the-badge)
-![Progress](https://img.shields.io/badge/PROGRESS-30%25-blue?style=for-the-badge)
-![Status](https://img.shields.io/badge/STATUS-ACTIVE%20RESEARCH-brightgreen?style=for-the-badge)
+![Labs](https://img.shields.io/badge/LABS-10%2F10-success?style=for-the-badge)
+![Progress](https://img.shields.io/badge/PROGRESS-100%25-blue?style=for-the-badge)
+![Status](https://img.shields.io/badge/STATUS-COMPLETE-brightgreen?style=for-the-badge)
 
 <br>
 
@@ -46,16 +44,14 @@
 ║  ENVIRONMENT  : 🐳 Isolated / Authorized Security Laboratory         ║
 ║  APPROACH     : Offensive Web Application Security Testing           ║
 ║                                                                      ║
-║  RECON        : ████████████████████  ACTIVE                        ║
-║  ENUMERATION  : ████████████████████  ACTIVE                        ║
-║  EXPLOITATION : ████████████████████  ACTIVE                        ║
-║  REPORTING    : ████████████████████  ACTIVE                        ║
+║  RECON        : ████████████████████  COMPLETE                     ║
+║  ENUMERATION  : ████████████████████  COMPLETE                     ║
+║  EXPLOITATION : ████████████████████  COMPLETE                     ║
+║  REPORTING    : ████████████████████  COMPLETE                     ║
 ║                                                                      ║
-║  OWASP       : [██████░░░░░░░░░░░░] 30%                             ║
-║  COMPLETED   : A01 • A02 • A03                                      ║
-║  NEXT TARGET : A04 — Insecure Design                                ║
-║                                                                      ║
-║  STATUS       : 🟢 ACTIVE SECURITY RESEARCH                         ║
+║  OWASP       : [████████████████████] 100%                          ║
+║  COMPLETED   : A01 → A10 (ALL CATEGORIES)                            ║
+║  STATUS       : 🏆 ALL LABS COMPLETE                                ║
 ║                                                                      ║
 ╚══════════════════════════════════════════════════════════════════════╝
 ```
@@ -64,11 +60,9 @@
 
 # ⚔️ PROJECT OVERVIEW
 
-This repository is a **hands-on Web Application Security research portfolio** focused on understanding and testing the **OWASP Top 10** using the intentionally vulnerable **OWASP Juice Shop** application.
+This repository is a **hands-on Web Application Security research portfolio** covering the full **OWASP Top 10 (2021)** using the intentionally vulnerable **OWASP Juice Shop** application.
 
-The goal is not simply to complete challenges.
-
-The goal is to understand how vulnerabilities are:
+The goal was never just to complete challenges. The goal was to understand how vulnerabilities are:
 
 ```text
         DISCOVERED
@@ -86,7 +80,7 @@ The goal is to understand how vulnerabilities are:
         RETESTED
 ```
 
-Every laboratory exercise is documented with practical evidence, technical observations, attack methodology, security impact, and remediation guidance.
+Every laboratory exercise is documented with practical evidence, technical observations, attack methodology, security impact, and remediation guidance. Several labs go beyond black-box testing into source-level root cause analysis (e.g. extracting and reading actual vulnerable code from the running container).
 
 ---
 
@@ -129,8 +123,6 @@ The primary target for this project is **OWASP Juice Shop**, an intentionally in
 
 # 🎯 PROJECT OBJECTIVES
 
-The primary objectives of this portfolio are:
-
 * 🔍 Understand the OWASP Top 10
 * 🌐 Perform web application reconnaissance
 * 🧭 Identify attack surfaces
@@ -138,25 +130,22 @@ The primary objectives of this portfolio are:
 * 🧪 Perform vulnerability testing
 * ⚔️ Reproduce vulnerabilities in a controlled environment
 * 📡 Analyze HTTP requests and responses
-* 🕵️ Use interception proxies for testing
 * 💥 Determine security impact
 * 📸 Capture reproducible evidence
 * 🛡️ Understand remediation techniques
-* 🔄 Retest vulnerabilities after mitigation
 * 📝 Produce professional security documentation
 
 ---
 
-# 📊 OWASP TOP 10 — LIVE PROGRESS
+# 📊 OWASP TOP 10 — FINAL PROGRESS
 
 <div align="center">
 
-## `03 / 10` CATEGORIES COMPLETED
-
-### 🔥 30% PROJECT COMPLETION
+## `10 / 10` CATEGORIES COMPLETED
+### 🏆 100% PROJECT COMPLETION
 
 ```text
-████████████████████████████░░░░░░░░░░░░░░░░░░░░░░
+████████████████████████████████████████████████
 ```
 
 </div>
@@ -166,21 +155,21 @@ The primary objectives of this portfolio are:
 ## 🗺️ A01 → A10 SECURITY ROADMAP
 
 |     ID     | OWASP Category                             |     Target    |      Status      |
-| :--------: | ------------------------------------------ | :-----------: | :--------------: |
-| 🔴 **A01** | Broken Access Control                      | 🍊 Juice Shop | 🟢 **COMPLETED** |
-| 🔴 **A02** | Cryptographic Failures                     | 🍊 Juice Shop | 🟢 **COMPLETED** |
-| 🔴 **A03** | Injection                                  | 🍊 Juice Shop | 🟢 **COMPLETED** |
-| 🟡 **A04** | Insecure Design                            | 🍊 Juice Shop |    🟡 **NEXT**   |
-|  ⚪ **A05** | Security Misconfiguration                  | 🍊 Juice Shop |     ⏳ Pending    |
-|  ⚪ **A06** | Vulnerable and Outdated Components         | 🍊 Juice Shop |     ⏳ Pending    |
-|  ⚪ **A07** | Identification and Authentication Failures | 🍊 Juice Shop |     ⏳ Pending    |
-|  ⚪ **A08** | Software and Data Integrity Failures       | 🍊 Juice Shop |     ⏳ Pending    |
-|  ⚪ **A09** | Security Logging and Monitoring Failures   | 🍊 Juice Shop |     ⏳ Pending    |
-|  ⚪ **A10** | Server-Side Request Forgery                | 🍊 Juice Shop |     ⏳ Pending    |
+| :--------: | ------------------------------------------- | :-----------: | :--------------: |
+| 🔴 **A01** | Broken Access Control                       | 🍊 Juice Shop | 🟢 **COMPLETED** |
+| 🔴 **A02** | Cryptographic Failures                      | 🍊 Juice Shop | 🟢 **COMPLETED** |
+| 🔴 **A03** | Injection                                   | 🍊 Juice Shop | 🟢 **COMPLETED** |
+| 🔴 **A04** | Insecure Design                             | 🍊 Juice Shop | 🟢 **COMPLETED** |
+| 🔴 **A05** | Security Misconfiguration                   | 🍊 Juice Shop | 🟢 **COMPLETED** |
+| 🔴 **A06** | Vulnerable and Outdated Components          | 🍊 Juice Shop | 🟢 **COMPLETED** |
+| 🔴 **A07** | Identification and Authentication Failures  | 🍊 Juice Shop | 🟢 **COMPLETED** |
+| 🔴 **A08** | Software and Data Integrity Failures        | 🍊 Juice Shop | 🟢 **COMPLETED** |
+| 🔴 **A09** | Security Logging and Monitoring Failures    | 🍊 Juice Shop | 🟢 **COMPLETED** |
+| 🔴 **A10** | Server-Side Request Forgery                 | 🍊 Juice Shop | 🟢 **COMPLETED** |
 
 ---
 
-# 🟢 COMPLETED LABS
+# 🏆 COMPLETED LABS — HIGHLIGHTS
 
 ```text
 ╔════════════════════════════════════════════════════════╗
@@ -190,97 +179,61 @@ The primary objectives of this portfolio are:
 ║  🟢 A01  Broken Access Control                         ║
 ║  🟢 A02  Cryptographic Failures                        ║
 ║  🟢 A03  Injection                                     ║
+║  🟢 A04  Insecure Design                                ║
+║  🟢 A05  Security Misconfiguration                      ║
+║  🟢 A06  Vulnerable and Outdated Components             ║
+║  🟢 A07  Identification and Authentication Failures     ║
+║  🟢 A08  Software and Data Integrity Failures           ║
+║  🟢 A09  Security Logging and Monitoring Failures       ║
+║  🟢 A10  Server-Side Request Forgery                    ║
 ║                                                        ║
 ║  ──────────────────────────────────────────────────    ║
 ║                                                        ║
-║  📊 Progress: 3 / 10                                  ║
-║  🔥 Completion: 30%                                    ║
+║  📊 Progress: 10 / 10                                 ║
+║  🏆 Completion: 100%                                   ║
 ║                                                        ║
 ╚════════════════════════════════════════════════════════╝
 ```
 
 ### 🔴 A01 — Broken Access Control
-
-Focus areas:
-
-```text
-Authorization
-      ↓
-Object Access
-      ↓
-IDOR
-      ↓
-Privilege Boundaries
-      ↓
-Authorization Bypass
-```
-
+IDOR on basket read endpoint (`GET /rest/basket/:id`) allowed cross-user data disclosure with a valid but unrelated token; write endpoint correctly enforced ownership (documented asymmetry).
 ➡️ **[Open A01 Lab →](./01-Broken-Access-Control/)**
 
----
-
 ### 🔴 A02 — Cryptographic Failures
-
-Focus areas:
-
-```text
-Sensitive Data
-      ↓
-Cryptography
-      ↓
-Weak Protection
-      ↓
-Information Exposure
-      ↓
-Security Impact
-```
-
+Default admin credentials (`admin@juice-sh.op` / `admin123`) granted full admin access; confirmed unsalted MD5 password hashing via direct hash comparison.
 ➡️ **[Open A02 Lab →](./02-Cryptographic-Failures/)**
 
----
-
 ### 🔴 A03 — Injection
-
-Focus areas:
-
-```text
-User Input
-      ↓
-Input Validation
-      ↓
-Injection Point
-      ↓
-Payload Processing
-      ↓
-Unexpected Execution
-```
-
+Classic and blind injection testing against Juice Shop's search and authentication surfaces.
 ➡️ **[Open A03 Lab →](./03-Injection/)**
 
----
+### 🔴 A04 — Insecure Design
+Business logic and design-level flaws that exist independent of implementation bugs.
+➡️ **[Open A04 Lab →](./04-Insecure-Design/)**
 
-# 🟡 NEXT MISSION
+### 🔴 A05 — Security Misconfiguration
+Default configurations, verbose framework behavior, and unnecessary exposure reviewed across the application.
+➡️ **[Open A05 Lab →](./05-Security-Misconfiguration/)**
 
-## A04 — INSECURE DESIGN
+### 🔴 A06 — Vulnerable and Outdated Components
+Forged an admin JWT via the `jsonwebtoken@0.4.0` RS256-to-HS256 algorithm confusion vulnerability (CVE-2015-9235), using the application's own publicly-exposed RSA public key as the HMAC secret — a complete, working authentication bypass with zero credentials.
+➡️ **[Open A06 Lab →](./06-Vulnerable-Components/)**
 
-```text
-              CURRENT POSITION
-                     │
-                     ▼
-              🟢 A01 COMPLETED
-                     │
-                     ▼
-              🟢 A02 COMPLETED
-                     │
-                     ▼
-              🟢 A03 COMPLETED
-                     │
-                     ▼
-              🟡 A04 NEXT TARGET
-                     │
-                     ▼
-              ⚪ A05 → A10
-```
+### 🔴 A07 — Identification and Authentication Failures
+No rate-limiting or brute-force protection identified on the login endpoint.
+➡️ **[Open A07 Lab →](./07-Authentication-Failures/)**
+
+### 🔴 A08 — Software and Data Integrity Failures
+`PUT /api/Products/:id` allowed complete product price tampering with **zero authentication required** — a critical, storefront-wide data integrity failure confirmed live via the public search endpoint.
+➡️ **[Open A08 Lab →](./08-Software-Data-Integrity-Failures/)**
+
+### 🔴 A09 — Security Logging and Monitoring Failures
+Verbose stack traces leaked full internal file paths on routine errors; 8 consecutive failed admin logins produced zero throttling or detection response; no security notification/audit-log channel found anywhere in the application.
+➡️ **[Open A09 Lab →](./09-Logging-Monitoring-Failures/)**
+
+### 🔴 A10 — Server-Side Request Forgery
+Extracted the actual server-side redirect validation source from the running container, revealing a flawed `.includes()` allowlist check. Built two independent working open-redirect exploits from the confirmed root cause.
+➡️ **[Open A10 Lab →](./10-SSRF/)**
 
 ---
 
@@ -302,44 +255,12 @@ flowchart LR
 
 ---
 
-# 🔎 PHASE 01 — RECONNAISSANCE
+# 🔎 METHODOLOGY PHASES
 
-The first stage focuses on understanding the target.
+### Phase 01 — Reconnaissance
+Identify entry points, routes, APIs, authentication mechanisms, and user-controlled input.
 
-### Activities
-
-```text
-✓ Identify application entry points
-✓ Discover available functionality
-✓ Map application routes
-✓ Identify APIs
-✓ Observe authentication mechanisms
-✓ Identify user-controlled input
-✓ Identify interesting parameters
-✓ Identify security boundaries
-```
-
-Example reconnaissance targets:
-
-```text
-/
-├── login
-├── register
-├── account
-├── admin
-├── api
-├── products
-├── basket
-├── orders
-└── search
-```
-
----
-
-# 🗺️ PHASE 02 — ATTACK SURFACE MAPPING
-
-The application is broken into attack surfaces.
-
+### Phase 02 — Attack Surface Mapping
 ```text
                  🍊 JUICE SHOP
                        │
@@ -356,31 +277,10 @@ The application is broken into attack surfaces.
                 🧪 TESTING POINTS
 ```
 
----
+### Phase 03 — Vulnerability Testing
+Input validation, authentication, authorization, session management, business logic, API security, configuration, cryptography, error handling, security headers.
 
-# 🧪 PHASE 03 — VULNERABILITY TESTING
-
-Testing focuses on identifying weaknesses in:
-
-* Input validation
-* Authentication
-* Authorization
-* Session management
-* Business logic
-* API security
-* Configuration
-* Cryptographic controls
-* Error handling
-* Security headers
-* File handling
-* Request processing
-
----
-
-# ⚔️ PHASE 04 — CONTROLLED EXPLOITATION
-
-Once a vulnerability is identified:
-
+### Phase 04 — Controlled Exploitation
 ```text
                     FINDING
                        │
@@ -388,7 +288,6 @@ Once a vulnerability is identified:
                 Is it reproducible?
                        │
                  ┌─────┴─────┐
-                 │           │
                 YES           NO
                  │           │
                  ▼           ▼
@@ -400,164 +299,44 @@ Once a vulnerability is identified:
                  ▼
           Determine Impact
 ```
+All exploitation was performed only against the authorized, local Juice Shop laboratory environment.
 
-All exploitation is performed only against the authorized Juice Shop laboratory environment.
-
----
-
-# 💥 PHASE 05 — IMPACT ANALYSIS
-
-Each finding is evaluated based on:
-
+### Phase 05 — Impact Analysis
 | Factor             | Questions                              |
-| ------------------ | -------------------------------------- |
-| 🎯 Confidentiality | Can sensitive data be exposed?         |
-| 🎯 Integrity       | Can data be modified?                  |
-| 🎯 Availability    | Can services be disrupted?             |
-| 👤 Privilege       | Can attacker permissions increase?     |
-| 🏢 Business Impact | What could happen to the organization? |
-| 🔥 Exploitability  | How difficult is exploitation?         |
+| ------------------ | --------------------------------------- |
+| 🎯 Confidentiality | Can sensitive data be exposed?          |
+| 🎯 Integrity       | Can data be modified?                   |
+| 🎯 Availability    | Can services be disrupted?              |
+| 👤 Privilege       | Can attacker permissions increase?      |
+| 🏢 Business Impact | What could happen to the organization?  |
+| 🔥 Exploitability  | How difficult is exploitation?          |
 
----
+### Phase 06 — Evidence Collection
+Each finding includes reproducible raw request/response output and terminal screenshots.
 
-# 📸 PHASE 06 — EVIDENCE COLLECTION
+### Phase 07 — Remediation
+Every vulnerability includes root cause, security impact, recommended fix, and best-practice guidance.
 
-Every important finding should contain reproducible evidence.
-
-Recommended evidence:
-
-```text
-📸 Screenshot
-    ↓
-🌐 Request
-    ↓
-📨 Response
-    ↓
-⚔️ Payload / Manipulation
-    ↓
-💥 Result
-```
-
-Example evidence structure:
-
-```text
-screenshots/
-│
-├── 01-recon.png
-├── 02-request.png
-├── 03-modified-request.png
-├── 04-exploitation.png
-├── 05-impact.png
-└── 06-remediation.png
-```
-
----
-
-# 🛡️ PHASE 07 — REMEDIATION
-
-A professional assessment doesn't stop at exploitation.
-
-Each vulnerability includes:
-
-```text
-Vulnerability
-      ↓
-Root Cause
-      ↓
-Security Impact
-      ↓
-Recommended Fix
-      ↓
-Security Best Practice
-      ↓
-Retest
-```
-
----
-
-# 🔄 PHASE 08 — RETESTING
-
-After remediation:
-
-```text
-Original Test
-     │
-     ▼
-Vulnerability Confirmed
-     │
-     ▼
-Remediation Applied
-     │
-     ▼
-Same Attack Repeated
-     │
-     ├───────► ❌ Still Vulnerable
-     │
-     └───────► ✅ Fixed
-```
+### Phase 08 — Retesting
+Findings are structured so that a fix can be validated by repeating the exact same reproduction steps.
 
 ---
 
 # 🧰 SECURITY TOOLKIT
 
 | Tool                    | Purpose                            |
-| ----------------------- | ---------------------------------- |
-| 🐧 **Ubuntu Linux**     | Primary security environment       |
-| 🍊 **OWASP Juice Shop** | Vulnerable target application      |
-| 🕵️ **Burp Suite**      | HTTP interception and manipulation |
-| 🛡️ **OWASP ZAP**       | Web application security testing   |
-| 🔎 **Nmap**             | Network/service enumeration        |
-| 📡 **Wireshark**        | Traffic analysis                   |
-| 🐳 **Docker**           | Isolated application deployment    |
-| 🔀 **Git**              | Version control                    |
-| 🐙 **GitHub**           | Portfolio and documentation        |
-
----
-
-# 🕵️ BURP SUITE WORKFLOW
-
-```text
-Browser
-   │
-   ▼
-┌──────────────┐
-│  Burp Proxy  │
-└──────┬───────┘
-       │
-       ▼
-🍊 Juice Shop
-       │
-       ▼
- HTTP Response
-       │
-       ▼
- Burp Analysis
-       │
-       ├── Modify
-       ├── Replay
-       ├── Compare
-       └── Validate
-```
-
-Typical testing workflow:
-
-```text
-Proxy → HTTP History → Identify Request
-                    ↓
-                 Repeater
-                    ↓
-              Modify Request
-                    ↓
-              Send Request
-                    ↓
-              Analyze Response
-```
+| ----------------------- | ----------------------------------- |
+| 🐧 **Ubuntu Linux**     | Primary security environment        |
+| 🍊 **OWASP Juice Shop** | Vulnerable target application       |
+| 🐳 **Docker**           | Isolated application deployment     |
+| 🌀 **curl**             | Direct HTTP request testing         |
+| 🐍 **Python 3**         | JWT decoding, JSON parsing/formatting |
+| 🔀 **Git**              | Version control                     |
+| 🐙 **GitHub**           | Portfolio and documentation         |
 
 ---
 
 # 📊 VULNERABILITY ANALYSIS MODEL
-
-Every finding is analyzed using:
 
 ```text
 ┌────────────────────────────────────┐
@@ -580,72 +359,23 @@ Every finding is analyzed using:
 
 # 📝 SECURITY REPORTING
 
-Each completed lab contains dedicated documentation.
+Each completed lab contains dedicated, consistent documentation.
 
 ```text
-01-Broken-Access-Control/
+NN-Category-Name/
 │
-├── README.md
-│
-├── commands.sh
-│
-├── notes.md
-│
-├── checklist.md
-│
-├── security_report.md
-│
-└── screenshots/
-    ├── 01-recon.png
-    ├── 02-request.png
-    ├── 03-exploit.png
-    ├── 04-impact.png
-    └── 05-remediation.png
+├── README.md          → Summary, findings table, evidence gallery
+├── commands.md         → Every command run, in order
+├── findings.md         → Detailed per-vulnerability write-up
+├── methodology.md       → Testing approach for that category
+├── remediation.md       → Fixes and best-practice guidance
+├── raw-output/          → Saved request/response evidence
+└── screenshots/         → Visual proof of exploitation
 ```
 
 ---
 
-# 📋 LAB DOCUMENTATION STANDARD
-
-Every lab follows the same professional structure.
-
-### 📄 README.md
-
-Contains:
-
-* Objective
-* Background
-* Target
-* Methodology
-* Tools
-* Attack surface
-* Testing process
-* Evidence
-* Impact
-* Remediation
-* Lessons learned
-
-### ⚙️ commands.sh
-
-Contains relevant commands used during the laboratory.
-
-### 📝 notes.md
-
-Contains technical observations and research notes.
-
-### ☑️ checklist.md
-
-Contains the security testing checklist.
-
-### 🔐 security_report.md
-
-Contains the professional vulnerability report.
-
----
-
 # 🧠 ATTACKER MINDSET
-
-During every assessment, ask:
 
 ```text
 ┌───────────────────────────────────────────────┐
@@ -670,26 +400,19 @@ During every assessment, ask:
 
 # 🔐 SECURITY PRINCIPLES
 
-This portfolio emphasizes:
-
 ### 🛡️ Defense in Depth
-
 Multiple security controls should protect sensitive functionality.
 
 ### 🚫 Least Privilege
-
 Users should receive only the permissions they require.
 
 ### 🔒 Secure by Design
-
 Security should be considered during application design, not after exploitation.
 
 ### 🧪 Continuous Testing
-
 Applications should be repeatedly tested as functionality changes.
 
 ### 📊 Evidence-Based Reporting
-
 Security findings should be reproducible and supported by technical evidence.
 
 ---
@@ -698,27 +421,24 @@ Security findings should be reproducible and supported by technical evidence.
 
 ```text
 OWASP CATEGORIES        10
-COMPLETED                3
-REMAINING                7
-CURRENT PROGRESS        30%
-TARGET APPLICATION       1
-SECURITY METHODOLOGY     1
+COMPLETED                10
+REMAINING                 0
+FINAL PROGRESS          100%
+TARGET APPLICATION        1
+SECURITY METHODOLOGY      1
 ```
-
-### Current Progress
 
 ```text
 A01 ████████████████████ 100%
 A02 ████████████████████ 100%
 A03 ████████████████████ 100%
-
-A04 ░░░░░░░░░░░░░░░░░░░░   0%
-A05 ░░░░░░░░░░░░░░░░░░░░   0%
-A06 ░░░░░░░░░░░░░░░░░░░░   0%
-A07 ░░░░░░░░░░░░░░░░░░░░   0%
-A08 ░░░░░░░░░░░░░░░░░░░░   0%
-A09 ░░░░░░░░░░░░░░░░░░░░   0%
-A10 ░░░░░░░░░░░░░░░░░░░░   0%
+A04 ████████████████████ 100%
+A05 ████████████████████ 100%
+A06 ████████████████████ 100%
+A07 ████████████████████ 100%
+A08 ████████████████████ 100%
+A09 ████████████████████ 100%
+A10 ████████████████████ 100%
 ```
 
 ---
@@ -731,83 +451,55 @@ OWASP-Top-10/
 ├── 📄 README.md
 │
 ├── 🔴 01-Broken-Access-Control/
-│   ├── README.md
-│   ├── commands.sh
-│   ├── notes.md
-│   ├── checklist.md
-│   ├── security_report.md
-│   └── screenshots/
-│
 ├── 🔴 02-Cryptographic-Failures/
-│   ├── README.md
-│   ├── commands.sh
-│   ├── notes.md
-│   ├── checklist.md
-│   ├── security_report.md
-│   └── screenshots/
-│
 ├── 🔴 03-Injection/
-│   ├── README.md
-│   ├── commands.sh
-│   ├── notes.md
-│   ├── checklist.md
-│   ├── security_report.md
-│   └── screenshots/
-│
-├── 🟡 04-Insecure-Design/
-├── ⚪ 05-Security-Misconfiguration/
-├── ⚪ 06-Vulnerable-Components/
-├── ⚪ 07-Authentication-Failures/
-├── ⚪ 08-Software-Data-Integrity-Failures/
-├── ⚪ 09-Logging-Monitoring-Failures/
-└── ⚪ 10-SSRF/
+├── 🔴 04-Insecure-Design/
+├── 🔴 05-Security-Misconfiguration/
+├── 🔴 06-Vulnerable-Components/
+├── 🔴 07-Authentication-Failures/
+├── 🔴 08-Software-Data-Integrity-Failures/
+├── 🔴 09-Logging-Monitoring-Failures/
+└── 🔴 10-SSRF/
 ```
+
+Each folder follows the same structure:
+`README.md · commands.md · findings.md · methodology.md · remediation.md · raw-output/ · screenshots/`
 
 ---
 
 # 🧭 PROJECT NAVIGATION
 
-### 🔴 Completed
-
 * **[A01 — Broken Access Control](./01-Broken-Access-Control/)**
 * **[A02 — Cryptographic Failures](./02-Cryptographic-Failures/)**
 * **[A03 — Injection](./03-Injection/)**
-
-### 🟡 Next
-
 * **[A04 — Insecure Design](./04-Insecure-Design/)**
-
-### ⚪ Upcoming
-
 * **[A05 — Security Misconfiguration](./05-Security-Misconfiguration/)**
-* **[A06 — Vulnerable Components](./06-Vulnerable-Components/)**
-* **[A07 — Authentication Failures](./07-Authentication-Failures/)**
-* **[A08 — Software & Data Integrity Failures](./08-Software-Data-Integrity-Failures/)**
-* **[A09 — Logging & Monitoring Failures](./09-Logging-Monitoring-Failures/)**
-* **[A10 — SSRF](./10-SSRF/)**
+* **[A06 — Vulnerable and Outdated Components](./06-Vulnerable-Components/)**
+* **[A07 — Identification and Authentication Failures](./07-Authentication-Failures/)**
+* **[A08 — Software and Data Integrity Failures](./08-Software-Data-Integrity-Failures/)**
+* **[A09 — Security Logging and Monitoring Failures](./09-Logging-Monitoring-Failures/)**
+* **[A10 — Server-Side Request Forgery](./10-SSRF/)**
 
 ---
 
-# 🏆 SKILLS BEING DEVELOPED
+# 🏆 SKILLS DEVELOPED
 
 ```text
 Web Application Security      ████████████████████
 Vulnerability Assessment      ████████████████████
-Burp Suite                    ██████████████████
-HTTP Analysis                 ██████████████████
+HTTP Analysis                 ████████████████████
 OWASP Methodology             ████████████████████
-API Security                  ████████████████
+API Security                  ██████████████████
+Source-Level Root Cause Analysis ████████████████
 Security Documentation        ████████████████████
 Linux Security                ██████████████████
-Docker                        ████████████████
+Docker                        ██████████████████
 Git / GitHub                  ████████████████████
 ```
 
 ---
 
 # 🌐 REAL-WORLD SECURITY RELEVANCE
-
-The techniques practiced in this laboratory environment translate to real-world security assessments involving:
 
 ```text
 🏦 Banking Applications
@@ -820,7 +512,7 @@ The techniques practiced in this laboratory environment translate to real-world 
 👤 Identity Platforms
 ```
 
-The purpose of using an intentionally vulnerable application is to build practical skills in a **controlled and authorized environment** before applying the same methodology to systems where explicit permission is required.
+The purpose of using an intentionally vulnerable application was to build practical skills in a **controlled and authorized environment** before applying the same methodology to systems where explicit permission is required.
 
 ---
 
@@ -828,109 +520,28 @@ The purpose of using an intentionally vulnerable application is to build practic
 
 > **Only test systems that you own or have explicit authorization to assess.**
 
-This project uses OWASP Juice Shop specifically because it is designed for security training and controlled vulnerability research.
-
-The techniques documented here are intended for:
-
-* Authorized penetration testing
-* Security education
-* Defensive research
-* Vulnerability validation
-* Secure development training
-* CTF / laboratory environments
+This project uses OWASP Juice Shop specifically because it is designed for security training and controlled vulnerability research. The techniques documented here are intended for authorized penetration testing, security education, defensive research, vulnerability validation, secure development training, and CTF/laboratory environments.
 
 ---
 
 # 🎓 LEARNING OUTCOMES
 
-By completing this project, the following capabilities are being developed:
-
 ### Technical
-
 * Web application reconnaissance
-* HTTP request analysis
-* Authorization testing
-* Authentication testing
+* HTTP request/response analysis
+* Authorization and authentication testing
 * Injection testing
 * API security testing
-* Vulnerability validation
+* JWT structure analysis and forgery (algorithm confusion)
+* Source-level vulnerability root-cause analysis
 * Exploitation methodology
-* Security impact analysis
 
 ### Professional
-
 * Security reporting
 * Evidence collection
 * Vulnerability documentation
 * Remediation recommendations
-* Risk communication
 * Structured penetration-testing methodology
-
----
-
-# 🚀 FINAL DESTINATION
-
-```text
-                         🔴 OWASP TOP 10
-                               │
-                               ▼
-                     🍊 JUICE SHOP LAB
-                               │
-                ┌──────────────┼──────────────┐
-                ▼              ▼              ▼
-             🔍 RECON       🧪 TEST         ⚔️ EXPLOIT
-                │              │              │
-                └──────────────┼──────────────┘
-                               ▼
-                         💥 IMPACT
-                               │
-                               ▼
-                        📸 EVIDENCE
-                               │
-                               ▼
-                        🛡️ REMEDIATION
-                               │
-                               ▼
-                          🔄 RETEST
-                               │
-                               ▼
-                        📝 REPORT
-                               │
-                               ▼
-                    🏆 SECURITY PORTFOLIO
-```
-
----
-
-# 📊 ROAD TO 100%
-
-<div align="center">
-
-```text
-                    OWASP TOP 10 JOURNEY
-
-A01 🟢 ━━━━━━━━━━━━━━━━━━━━ 100%
-A02 🟢 ━━━━━━━━━━━━━━━━━━━━ 100%
-A03 🟢 ━━━━━━━━━━━━━━━━━━━━ 100%
-A04 🟡 ━━━━━━━━━━━━━━━━━━━━ NEXT
-A05 ⚪ ──────────────────── PENDING
-A06 ⚪ ──────────────────── PENDING
-A07 ⚪ ──────────────────── PENDING
-A08 ⚪ ──────────────────── PENDING
-A09 ⚪ ──────────────────── PENDING
-A10 ⚪ ──────────────────── PENDING
-
-
-              🔥 CURRENT: 30%
-
-       🟢🟢🟢⚪⚪⚪⚪⚪⚪⚪
-```
-
-### 🎯 MISSION: `10 / 10`
-
-**From vulnerability discovery → professional security assessment**
-
-</div>
 
 ---
 
@@ -946,7 +557,7 @@ A10 ⚪ ──────────────────── PENDING
 
 <div align="center">
 
-# ⚔️ BREAK • ANALYZE • SECURE
+# 🏆 ALL 10 CATEGORIES COMPLETE
 
 ```text
 ╔══════════════════════════════════════════════╗
@@ -955,21 +566,18 @@ A10 ⚪ ──────────────────── PENDING
 ║                                              ║
 ║       🍊 JUICE SHOP ASSESSMENT               ║
 ║                                              ║
-║          03 / 10 COMPLETED                   ║
+║          10 / 10 COMPLETED                   ║
 ║                                              ║
-║             🔥 30% COMPLETE                  ║
-║                                              ║
-║       NEXT → A04: INSECURE DESIGN            ║
+║             🏆 100% COMPLETE                 ║
 ║                                              ║
 ╚══════════════════════════════════════════════╝
 ```
 
 ### 🛡️ Offensive Security Research Portfolio
-
 **Reconnaissance • Exploitation • Analysis • Remediation**
 
 <br>
 
-`🟢 3 Completed`    `🟡 1 Next`    `⚪ 6 Remaining`
+`🟢 10 Completed`    `🏆 Project Complete`
 
 </div>
