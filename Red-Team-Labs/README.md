@@ -33,7 +33,8 @@ them — every lab here was built, broken, debugged, and fixed by hand.
 | # | Lab | CVE / Technique | Status | Impact |
 |---|---|---|:---:|---|
 | 01 | [Log4Shell — Apache Solr RCE](./01-Log4Shell-CVE-2021-44228) | CVE-2021-44228 | ✅ Complete | Remote Code Execution (root) |
-| 02 | *Coming next* | — | 🚧 In Progress | — |
+| 02 | [Spring4Shell — Tomcat/Spring MVC RCE](./02-Spring4Shell-CVE-2022-22965) | CVE-2022-22965 | ✅ Complete | Remote Code Execution (root) |
+| 03 | *Coming next* | — | 🚧 In Progress | — |
 
 > Each lab folder is self-contained: `README.md` (full writeup), `screenshots/` (visual evidence),
 > `raw-output/` (unedited terminal logs), and any PoC code used.
