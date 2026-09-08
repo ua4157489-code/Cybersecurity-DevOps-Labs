@@ -2,78 +2,83 @@
 
 ## 📌 Lab Overview
 
-This lab demonstrates the practical identification, simulation, telemetry collection, detection, investigation, and documentation of **MITRE ATT&CK Technique T1059.004 — Unix Shell**.
+This laboratory demonstrates the practical simulation, monitoring, detection, investigation, and documentation of **MITRE ATT&CK Technique T1059.004 — Unix Shell**.
 
-The exercise focuses on the use of a Unix shell, specifically **Bash**, and demonstrates how security monitoring can identify shell execution through Linux **Auditd** telemetry.
+The lab uses **Bash** on an Ubuntu Linux system and **Linux Auditd** to collect endpoint telemetry related to shell execution.
 
-The lab follows a defensive SOC-oriented workflow:
+A controlled Bash command is executed, an Auditd rule is configured to monitor Bash execution through the `execve` system call, and the resulting audit events are investigated using `ausearch`.
+
+The overall workflow is:
 
 ```text
-Controlled Simulation
+Controlled Bash Execution
         ↓
-Bash Execution
+    execve()
         ↓
-Auditd Telemetry
+   Auditd Rule
         ↓
-Detection Rule
+  Auditd Telemetry
         ↓
-Audit Event
+/var/log/audit/audit.log
         ↓
-Investigation
+  ausearch Analysis
         ↓
 MITRE ATT&CK Mapping
         ↓
-Security Analysis
-        ↓
-Documentation & Remediation
+SOC Detection & Investigation
 ```
 
 ---
 
-## 🎯 Objectives
+# 🎯 Objectives
 
 The main objectives of this lab are:
 
-* Understand MITRE ATT&CK **T1059.004 — Unix Shell**.
-* Understand how attackers can use Unix shells for command execution.
-* Perform a controlled Bash execution in a Linux environment.
-* Verify the Bash executable and operating-system environment.
-* Configure Linux Auditd to monitor Bash execution.
-* Troubleshoot Auditd when the service fails to start.
+* Understand MITRE ATT&CK T1059.004 — Unix Shell.
+* Understand the security relevance of Unix shell execution.
+* Perform controlled Bash execution on Linux.
+* Verify the Bash executable and system environment.
+* Configure Linux Auditd for Bash execution monitoring.
+* Troubleshoot an Auditd startup failure.
+* Restore Auditd functionality.
 * Create a custom Auditd detection rule.
-* Generate controlled Bash execution telemetry.
-* Search and investigate Auditd events.
-* Analyze `EXECVE` and `SYSCALL` records.
-* Map observed activity to MITRE ATT&CK.
-* Document detection evidence.
-* Understand how SOC analysts can investigate shell execution.
-* Apply appropriate Linux monitoring and hardening practices.
+* Monitor the `execve` system call.
+* Generate controlled T1059.004 telemetry.
+* Search Auditd events using `ausearch`.
+* Analyze `EXECVE` and `SYSCALL` audit records.
+* Identify Bash execution evidence.
+* Map the observed activity to MITRE ATT&CK.
+* Understand SOC investigation requirements.
+* Document practical security evidence.
+* Apply defensive monitoring and hardening recommendations.
 
 ---
 
 # 🧰 Prerequisites
 
-Before performing this lab, the following knowledge and resources are recommended:
+## Knowledge Requirements
 
-### Knowledge
+The following knowledge is recommended:
 
-* Basic Linux command-line knowledge
-* Basic Bash knowledge
-* Understanding of Linux processes
+* Basic Linux commands
+* Basic Bash shell usage
+* Linux process fundamentals
 * Basic system administration
 * Basic cybersecurity concepts
+* Basic SOC concepts
 * Familiarity with MITRE ATT&CK
-* Basic SOC and log-analysis concepts
 
-### System Requirements
+## Required Tools
 
-* Linux system
-* `bash`
-* `auditd`
-* `ausearch`
+The laboratory uses:
+
+* Bash
+* Auditd
 * `auditctl`
+* `ausearch`
 * `augenrules`
-* `sudo` privileges
+* `systemctl`
+* `sudo`
 
 ---
 
@@ -84,12 +89,13 @@ Before performing this lab, the following knowledge and resources are recommende
 | Operating System        | Ubuntu 24.04.4 LTS     |
 | Architecture            | x86_64                 |
 | Kernel                  | Linux 7.0.0-31-generic |
-| Shell                   | zsh / Bash             |
+| Interactive Shell       | zsh                    |
+| Test Shell              | Bash                   |
 | Bash Path               | `/usr/bin/bash`        |
 | Monitoring              | Linux Auditd           |
-| Log Analysis            | `ausearch`             |
-| Detection Configuration | Auditd rules           |
-| ATT&CK Technique        | T1059.004              |
+| Investigation Tool      | `ausearch`             |
+| Detection Configuration | Auditd Rule            |
+| MITRE Technique         | T1059.004              |
 | Technique Name          | Unix Shell             |
 
 ---
@@ -109,27 +115,30 @@ T1059.004-Unix-Shell/
     ├── 01-t1059-004-bash-execution.png
     ├── 02-t1059-004-audit-rule.png
     ├── 03-t1059-004-detection-evidence.png
-    ├── 04-auditd-status.png
-    └── 05-t1059-004-audit-log.png
+    └── 04-auditd-status.png
 ```
 
 ---
 
 # 🧩 MITRE ATT&CK Mapping
 
-## Technique
+## Tactic
+
+**Execution**
+
+## Parent Technique
 
 **T1059 — Command and Scripting Interpreter**
 
-### Sub-Technique
+## Sub-Technique
 
 **T1059.004 — Unix Shell**
 
-### Description
+## Technique Description
 
-Unix Shell is a command and scripting interpreter technique in which adversaries use Unix shells to execute commands and scripts.
+MITRE ATT&CK T1059.004 represents adversary use of Unix shells to execute commands and scripts.
 
-Examples of Unix shells include:
+Common Unix shells include:
 
 * Bash
 * sh
@@ -137,38 +146,51 @@ Examples of Unix shells include:
 * ksh
 * csh
 
-In this lab, **Bash** is used to demonstrate the technique in a controlled environment.
+This laboratory focuses specifically on **Bash execution** on Linux.
 
 ---
 
 # 🔐 Cybersecurity Relevance
 
-Unix shells are legitimate administrative tools, but they can also be abused after an attacker gains access to a Linux system.
+Unix shells are essential administrative tools on Linux systems. However, adversaries can also use them after obtaining access to a system.
 
-An attacker may use a shell to:
+A compromised shell may allow an attacker to:
 
 * Execute commands
-* Discover system information
 * Enumerate users
+* Discover system information
 * Inspect running processes
+* Access files
 * Modify files
-* Download tools
-* Establish persistence
-* Perform privilege escalation activities
+* Download additional tools
 * Execute scripts
-* Move through a compromised environment
+* Perform privilege escalation
+* Establish persistence
+* Perform post-exploitation activities
 
-Because shell execution is common in legitimate administration, detection requires good telemetry and contextual analysis.
+Because Bash is also heavily used by legitimate administrators and automation systems, Bash execution alone should not automatically be classified as malicious.
 
-This makes **T1059.004** particularly relevant to Linux endpoint monitoring and SOC operations.
+SOC analysts should correlate shell execution with additional telemetry such as:
+
+* User identity
+* Parent process
+* Process tree
+* Command arguments
+* SSH authentication
+* Source address
+* Privilege level
+* Network connections
+* File modifications
+* Execution time
+* Host role
 
 ---
 
-# 🔬 Task 1 — Verify the Linux Environment
+# 🔎 Task 1 — Environment Verification
 
-The first step is to verify the operating-system environment and the available Bash executable.
+The first stage of the laboratory was verifying the Linux environment and Bash executable.
 
-Useful commands:
+Commands used:
 
 ```bash
 id
@@ -178,27 +200,31 @@ command -v bash
 bash --version
 ```
 
-The lab environment confirmed:
+The Bash executable was confirmed as:
 
 ```text
-Bash: 5.2.21(1)-release
-Bash Path: /usr/bin/bash
-Architecture: x86_64
+/usr/bin/bash
 ```
 
-The environment verification ensures that the subsequent simulation is performed against the expected Linux shell.
+The system architecture was also confirmed as:
+
+```text
+x86_64
+```
+
+The environment verification ensures that the simulation is performed against the expected Linux system.
 
 ---
 
 # 💻 Task 2 — Controlled Bash Execution
 
-A controlled Bash execution was performed using:
+A controlled Bash process was launched using:
 
 ```bash
 bash -c 'echo "MITRE T1059.004 test execution"; whoami; uname -srm'
 ```
 
-The command produced evidence similar to:
+The command generated output similar to:
 
 ```text
 MITRE T1059.004 test execution
@@ -212,9 +238,9 @@ The use of:
 bash -c
 ```
 
-ensures that an explicit Bash process is launched instead of relying on the current interactive shell.
+explicitly launches Bash for the test.
 
-This is important because the interactive environment may use another shell such as `zsh`.
+This is important because the interactive shell in the environment was `zsh`. Explicitly launching Bash provides direct evidence of the Unix Shell technique being exercised through Bash.
 
 ---
 
@@ -228,26 +254,28 @@ This is important because the interactive environment may use another shell such
 
 ### Explanation
 
-This screenshot demonstrates the controlled execution of Bash associated with **MITRE ATT&CK T1059.004 — Unix Shell**.
+This screenshot provides visual evidence of the controlled Bash execution.
 
-The screenshot provides evidence that:
+The evidence demonstrates:
 
-* Bash was successfully executed.
-* The Bash environment was available.
-* The command executed successfully.
+* Bash was explicitly executed.
+* The test command completed successfully.
 * The current Linux user was identified.
-* The operating-system kernel and architecture were verified.
-* The activity occurred inside the dedicated laboratory environment.
+* The Linux kernel was displayed.
+* The system architecture was verified.
+* The execution occurred inside the dedicated laboratory environment.
 
-This represents the **simulation stage** of the detection workflow.
+This represents the **simulation stage** of the T1059.004 detection workflow.
 
 ---
 
-# 🛡️ Task 3 — Configure Auditd Telemetry
+# 🛡️ Task 3 — Auditd Telemetry
 
-Linux Auditd provides security auditing capabilities that can record system-level activities.
+Linux Auditd was selected as the endpoint telemetry source for this laboratory.
 
-The Auditd service was checked using:
+Auditd can record security-relevant activities, including process execution and system calls.
+
+The service was checked using:
 
 ```bash
 systemctl is-active auditd
@@ -256,7 +284,13 @@ sudo auditctl -s
 
 Initially, Auditd was not functioning correctly.
 
-The diagnostic investigation showed:
+A foreground diagnostic was performed:
+
+```bash
+sudo timeout 5s auditd -f
+```
+
+The diagnostic identified:
 
 ```text
 Could not open dir /var/log/audit
@@ -267,7 +301,7 @@ This indicated that the required Auditd log directory was missing.
 
 ---
 
-# 🔧 Task 4 — Troubleshoot and Repair Auditd
+# 🔧 Task 4 — Auditd Troubleshooting and Recovery
 
 The missing directory was created:
 
@@ -275,10 +309,15 @@ The missing directory was created:
 sudo mkdir -p /var/log/audit
 ```
 
-Ownership and permissions were configured:
+The directory ownership was configured:
 
 ```bash
 sudo chown root:adm /var/log/audit
+```
+
+The directory permissions were configured:
+
+```bash
 sudo chmod 0750 /var/log/audit
 ```
 
@@ -300,13 +339,13 @@ Expected result:
 active
 ```
 
-The audit framework was also verified:
+The audit framework was also checked:
 
 ```bash
 sudo auditctl -s
 ```
 
-The resulting configuration confirmed that Auditd was enabled and operational.
+The resulting status confirmed that Auditd was enabled and operational.
 
 ---
 
@@ -320,37 +359,26 @@ The resulting configuration confirmed that Auditd was enabled and operational.
 
 ### Explanation
 
-This screenshot verifies that the Linux Auditd service is operating correctly.
+This screenshot verifies that the Linux Auditd service is operational.
 
 The evidence demonstrates:
 
 * Auditd is active.
 * The Linux audit framework is enabled.
 * Auditd has an active process.
-* The audit subsystem is accepting events.
-* No audit events were lost during the verification.
+* The audit subsystem is functioning.
+* The audit framework is available for telemetry collection.
+* No audit events were lost during the displayed verification.
 
-This evidence is particularly important because detection rules cannot provide reliable telemetry if the underlying auditing service is not operational.
+This evidence is important because detection rules depend on a functioning telemetry collection service.
+
+The troubleshooting performed earlier in the lab demonstrated that detection infrastructure must be operational before reliable endpoint monitoring can take place.
 
 ---
 
-# 📜 Task 5 — Create the T1059.004 Audit Rule
+# 📜 Task 5 — Create the T1059.004 Auditd Rule
 
-After restoring Auditd functionality, a dedicated rule was created to monitor execution of `/usr/bin/bash`.
-
-The rule was configured with:
-
-```text
--a always,exit -F arch=b64 -S execve -F path=/usr/bin/bash -F auid>=1000 -F auid!=4294967295 -k mitre_t1059_004
-```
-
-The rule monitors:
-
-* 64-bit system calls
-* `execve`
-* `/usr/bin/bash`
-* User sessions with authenticated user IDs
-* A custom detection key
+A dedicated Auditd rule was created to monitor execution of the Bash executable.
 
 The rule was stored in:
 
@@ -358,7 +386,24 @@ The rule was stored in:
 /etc/audit/rules.d/mitre-t1059-004.rules
 ```
 
-The configuration was loaded using:
+The configured rule was:
+
+```text
+-a always,exit -F arch=b64 -S execve -F path=/usr/bin/bash -F auid>=1000 -F auid!=4294967295 -k mitre_t1059_004
+```
+
+The rule monitors:
+
+| Rule Component       | Purpose                            |
+| -------------------- | ---------------------------------- |
+| `arch=b64`           | Monitors 64-bit system calls       |
+| `-S execve`          | Monitors program execution         |
+| `path=/usr/bin/bash` | Focuses on Bash execution          |
+| `auid>=1000`         | Focuses on normal user sessions    |
+| `auid!=4294967295`   | Excludes unset authentication IDs  |
+| `-k mitre_t1059_004` | Assigns a searchable detection key |
+
+The rules were loaded using:
 
 ```bash
 sudo augenrules --load
@@ -369,6 +414,20 @@ The active rule was verified using:
 ```bash
 sudo auditctl -l | grep mitre_t1059_004
 ```
+
+Auditd may normalize the unset authentication ID value during rule loading and display:
+
+```text
+auid!=-1
+```
+
+instead of:
+
+```text
+auid!=4294967295
+```
+
+This is expected normalization.
 
 ---
 
@@ -382,46 +441,57 @@ sudo auditctl -l | grep mitre_t1059_004
 
 ### Explanation
 
-This screenshot shows the active Auditd rule created specifically for the MITRE ATT&CK T1059.004 lab.
+This screenshot shows the active Auditd rule created specifically for the T1059.004 laboratory.
 
-The important components are:
+The rule is designed to detect execution of:
 
-| Rule Component        | Purpose                              |
-| --------------------- | ------------------------------------ |
-| `arch=b64`            | Monitors 64-bit system calls         |
-| `-S execve`           | Monitors process execution           |
-| `path=/usr/bin/bash`  | Focuses on Bash execution            |
-| `auid>=1000`          | Focuses on normal user sessions      |
-| `auid!=-1`            | Excludes unset authentication IDs    |
-| `key=mitre_t1059_004` | Provides an investigation/search key |
+```text
+/usr/bin/bash
+```
 
-The custom key makes the events easy to retrieve with `ausearch`.
+through the Linux:
+
+```text
+execve
+```
+
+system call.
+
+The custom key:
+
+```text
+mitre_t1059_004
+```
+
+provides an efficient way to search for events generated by this rule.
+
+This confirms that the detection logic was successfully loaded into the active Auditd configuration.
 
 ---
 
 # ⚡ Task 6 — Generate Detection Telemetry
 
-After loading the Auditd rule, another controlled Bash execution was performed:
+After the detection rule was loaded, a controlled Bash execution was performed again:
 
 ```bash
 bash -c 'echo "MITRE T1059.004 test execution"; whoami; uname -srm'
 ```
 
-This execution was designed to generate an Auditd event.
+The purpose was to generate an Auditd event matching the newly configured rule.
 
-The resulting event was then searched using:
+The generated events were searched using:
 
 ```bash
 sudo ausearch -k mitre_t1059_004 -i
 ```
 
-The `-i` option makes the audit output easier to interpret by converting numeric fields into human-readable values where possible.
+The `-i` option makes the output easier to interpret by converting available numeric values into human-readable representations.
 
 ---
 
 # 🔎 Task 7 — Investigate Auditd Events
 
-The relevant events were filtered using:
+The relevant Bash execution records were filtered using:
 
 ```bash
 sudo ausearch -k mitre_t1059_004 -i \
@@ -429,7 +499,7 @@ sudo ausearch -k mitre_t1059_004 -i \
 | grep -E 'bash|execve|mitre_t1059_004'
 ```
 
-The investigation produced important telemetry including:
+The investigation identified records including:
 
 ```text
 type=EXECVE
@@ -441,7 +511,7 @@ and:
 type=SYSCALL
 ```
 
-The event also contained fields such as:
+Important fields included:
 
 ```text
 comm=bash
@@ -450,9 +520,11 @@ success=yes
 key=mitre_t1059_004
 ```
 
+These fields provide the endpoint evidence needed to identify the Bash execution.
+
 ---
 
-# 📸 Evidence 04 — T1059.004 Detection Evidence
+# 📸 Evidence 04 — Detection Evidence
 
 ### Screenshot
 
@@ -462,27 +534,25 @@ key=mitre_t1059_004
 
 ### Explanation
 
-This is the primary detection evidence for the lab.
+This screenshot provides the primary detection evidence collected during the laboratory.
 
-The screenshot demonstrates that Auditd successfully detected the controlled Bash execution.
+The Auditd output confirms that the controlled Bash execution generated security telemetry.
 
-Important fields include:
-
-### `type=EXECVE`
+## `EXECVE` Record
 
 The `EXECVE` record provides information about the executed command and its arguments.
 
-It can reveal:
+Relevant information can include:
 
+* Argument count
 * Executable name
 * Command arguments
-* Number of arguments
 
-### `type=SYSCALL`
+## `SYSCALL` Record
 
-The `SYSCALL` record provides information about the underlying system call.
+The `SYSCALL` record provides information about the underlying system call and execution context.
 
-The important values include:
+Important fields observed during the investigation include:
 
 ```text
 syscall=execve
@@ -491,61 +561,23 @@ comm=bash
 exe=/usr/bin/bash
 ```
 
-### `key=mitre_t1059_004`
+## Detection Key
 
-This field connects the event to the custom Auditd detection rule.
+The event contains:
 
-From a SOC perspective, this provides a strong correlation point for searching and investigating T1059.004 activity.
-
----
-
-# 🧾 Task 8 — Audit Log Verification
-
-Auditd stores collected security events in its configured audit log.
-
-The log was verified using:
-
-```bash
-sudo ls -lh /var/log/audit/audit.log
+```text
+key=mitre_t1059_004
 ```
 
-The T1059.004 events can be searched using:
+This connects the event to the custom Auditd detection rule.
 
-```bash
-sudo ausearch -k mitre_t1059_004 -i
-```
-
-This confirms that the detection telemetry is not only generated but also available for later investigation.
+From a SOC perspective, this demonstrates how endpoint telemetry can be used to detect and investigate Unix shell execution.
 
 ---
 
-# 📸 Evidence 05 — Audit Log Verification
+# 🔄 Detection Workflow
 
-### Screenshot
-
-![T1059.004 Audit Log](screenshots/05-t1059-004-audit-log.png)
-
-**File:** `screenshots/05-t1059-004-audit-log.png`
-
-### Explanation
-
-This screenshot verifies the presence of the Auditd log and the recorded T1059.004 activity.
-
-The evidence demonstrates that:
-
-1. Bash execution generated an audit event.
-2. The event was associated with the custom detection key.
-3. Auditd retained the event in its logging system.
-4. The event can be retrieved during an investigation.
-5. The telemetry can support SOC-level detection and analysis.
-
-This represents the **persistence and investigation stage** of the workflow.
-
----
-
-# 🔄 Complete Detection Workflow
-
-The complete lab workflow can be represented as:
+The complete detection workflow demonstrated in this lab is:
 
 ```text
 ┌─────────────────────────────┐
@@ -562,12 +594,11 @@ The complete lab workflow can be represented as:
 └──────────────┬──────────────┘
                ↓
 ┌─────────────────────────────┐
-│ Auditd Security Event       │
-│ EXECVE + SYSCALL            │
+│ EXECVE + SYSCALL Records    │
 └──────────────┬──────────────┘
                ↓
 ┌─────────────────────────────┐
-│ /var/log/audit/audit.log    │
+│ Auditd Log                  │
 └──────────────┬──────────────┘
                ↓
 ┌─────────────────────────────┐
@@ -583,70 +614,64 @@ The complete lab workflow can be represented as:
 
 # 🕵️ Investigation Findings
 
-The investigation confirmed the following:
+The investigation established the following:
 
 | Finding          | Result            |
 | ---------------- | ----------------- |
 | Bash executable  | `/usr/bin/bash`   |
-| Bash execution   | Successful        |
+| Execution method | `bash -c`         |
 | System call      | `execve`          |
 | Auditd           | Active            |
 | Audit rule       | Loaded            |
 | Detection key    | `mitre_t1059_004` |
-| Execution event  | Detected          |
-| `EXECVE` record  | Present           |
-| `SYSCALL` record | Present           |
-| Audit log        | Available         |
+| Execution status | Successful        |
+| `EXECVE` event   | Detected          |
+| `SYSCALL` event  | Detected          |
 | MITRE mapping    | T1059.004         |
 
 ---
 
 # 🧠 Detection Analysis
 
-The detection logic is based on monitoring execution of the Bash binary.
+The detection logic focuses on Bash execution through the Linux `execve` system call.
 
-The important telemetry relationship is:
+The relationship can be represented as:
 
 ```text
 /usr/bin/bash
-      +
-execve
-      +
-authenticated user session
-      +
+     +
+  execve
+     +
+Authenticated User
+     +
 mitre_t1059_004
-      ↓
-Potential T1059.004 Activity
+     ↓
+T1059.004 Detection Evidence
 ```
 
-A SOC analyst should not automatically treat every Bash execution as malicious because Bash is a legitimate administrative tool.
+However, Bash execution alone is not enough to determine malicious activity.
 
-Instead, the alert should be investigated using additional context.
+A SOC analyst should investigate additional context before classifying the event.
 
 Useful contextual information includes:
 
 * User account
 * Parent process
 * Process tree
-* Command arguments
-* Source of the session
-* SSH activity
-* Authentication events
+* Command-line arguments
+* SSH authentication
+* Source address
+* Privilege level
+* File activity
 * Network connections
-* File modifications
-* Privilege changes
-* Timing
+* Execution time
 * Host role
 
 ---
 
 # 🚨 Potential SOC Detection Scenarios
 
-The same telemetry can become more valuable when correlated with other events.
-
-Examples include:
-
-### Scenario 1 — SSH Login + Bash Execution
+## Scenario 1 — SSH Login + Bash Execution
 
 ```text
 Successful SSH Login
@@ -656,35 +681,41 @@ Bash Execution
 Suspicious Commands
 ```
 
-This may warrant investigation depending on the user and command context.
+Unexpected Bash execution following suspicious remote access may warrant investigation.
 
-### Scenario 2 — Privilege Escalation + Bash
+---
+
+## Scenario 2 — Privilege Escalation + Bash
 
 ```text
 Normal User
-    ↓
+     ↓
 Privilege Escalation
-    ↓
-Root Bash
-    ↓
+     ↓
+Privileged Bash
+     ↓
 System Changes
 ```
 
-This could indicate post-exploitation activity.
+This sequence may indicate possible post-exploitation activity.
 
-### Scenario 3 — Web Server + Shell
+---
+
+## Scenario 3 — Web Server + Shell Execution
 
 ```text
 Web Server Process
-       ↓
+        ↓
 Shell Execution
-       ↓
+        ↓
 Command Execution
 ```
 
-Unexpected shell execution from a web-service process can be a strong investigation signal.
+Unexpected shell execution originating from a web-service process can be a strong investigation signal.
 
-### Scenario 4 — Shell + Network Activity
+---
+
+## Scenario 4 — Shell + Network Activity
 
 ```text
 Bash Execution
@@ -694,63 +725,52 @@ Network Connection
 External Host
 ```
 
-Correlation with network telemetry can help identify potentially malicious command execution.
+Correlation with network telemetry can provide additional evidence of potentially suspicious activity.
 
 ---
 
 # ⚠️ False Positive Considerations
 
-Bash execution by itself is not necessarily malicious.
+Bash is a legitimate Linux administrative tool.
 
-Legitimate examples include:
+Potential legitimate Bash execution includes:
 
-* System administrators
-* Automation scripts
-* Configuration management
+* System administration
 * Software installation
-* Maintenance tasks
+* Configuration management
+* Automation
 * CI/CD pipelines
 * Scheduled jobs
+* System maintenance
 * Troubleshooting
 
-Therefore, a production detection should include contextual conditions such as:
-
-* User identity
-* Parent process
-* Host type
-* Command line
-* Session source
-* Time of execution
-* Privilege level
-* Network activity
+Therefore, production detection should use contextual correlation instead of treating every Bash execution as malicious.
 
 ---
 
-# 🛠️ Remediation & Hardening
+# 🛠️ Defensive Recommendations
 
-Organizations should consider the following defensive controls:
+## 1. Monitor Shell Execution
 
-### 1. Monitor Shell Execution
-
-Maintain endpoint telemetry for:
+Monitor relevant Unix shells such as:
 
 * Bash
 * sh
 * zsh
-* Other relevant shells
+* Other shells used in the environment
 
-### 2. Centralize Logs
+## 2. Centralize Audit Logs
 
-Forward Auditd events to a central SIEM such as:
+Forward endpoint telemetry to a centralized SIEM such as:
 
 * Wazuh
 * Elastic Stack
 * Splunk
 * Microsoft Sentinel
 
-### 3. Monitor Privileged Shells
+## 3. Monitor Privileged Shell Activity
 
-Pay particular attention to:
+Pay additional attention to shell execution involving:
 
 ```text
 root
@@ -758,22 +778,20 @@ sudo
 su
 ```
 
-shell execution.
-
-### 4. Monitor Remote Sessions
+## 4. Correlate Authentication Events
 
 Correlate shell execution with:
 
 * SSH authentication
-* VPN activity
+* VPN sessions
 * Remote administration
-* Source IP addresses
+* Login events
 
-### 5. Apply Least Privilege
+## 5. Apply Least Privilege
 
-Users should only have the permissions necessary for their role.
+Users should receive only the permissions required for their responsibilities.
 
-### 6. Protect Audit Configuration
+## 6. Protect Audit Configuration
 
 Restrict unauthorized modification of:
 
@@ -781,15 +799,31 @@ Restrict unauthorized modification of:
 /etc/audit/
 ```
 
-### 7. Monitor Audit Service Health
+and related Auditd configuration files.
 
-Ensure that Auditd remains active and that audit events are not being lost.
+## 7. Monitor Auditd Health
+
+Continuously monitor:
+
+* Auditd service status
+* Audit queue
+* Lost events
+* Log availability
+* Detection-rule configuration
 
 ---
 
 # 🔧 Troubleshooting Lesson
 
-During this lab, Auditd initially failed to start.
+One of the important practical lessons from this lab was troubleshooting Auditd.
+
+Auditd initially failed because:
+
+```text
+/var/log/audit
+```
+
+did not exist.
 
 The diagnostic command:
 
@@ -797,32 +831,23 @@ The diagnostic command:
 sudo timeout 5s auditd -f
 ```
 
-identified:
+identified the issue.
 
-```text
-Could not open dir /var/log/audit
-```
-
-The issue was resolved by creating the missing directory:
+The problem was resolved using:
 
 ```bash
 sudo mkdir -p /var/log/audit
-```
-
-and applying the appropriate ownership and permissions:
-
-```bash
 sudo chown root:adm /var/log/audit
 sudo chmod 0750 /var/log/audit
 ```
 
-After restarting Auditd, the service became operational.
+Auditd was then restarted and successfully verified.
 
-### Lesson Learned
+### Key Lesson
 
-Security monitoring depends not only on detection rules but also on the health of the underlying telemetry infrastructure.
+Security detection depends on reliable telemetry.
 
-A properly configured detection rule is ineffective if the logging service cannot start or store events.
+A detection rule is ineffective if the underlying monitoring infrastructure cannot collect or retain security events.
 
 ---
 
@@ -830,19 +855,19 @@ A properly configured detection rule is ineffective if the logging service canno
 
 ## MITRE ATT&CK
 
-A globally used knowledge base for understanding adversary tactics, techniques, and procedures.
+A knowledge base used to understand and classify adversary tactics and techniques.
 
 ## T1059.004
 
-MITRE ATT&CK sub-technique representing **Unix Shell** command execution.
+The MITRE ATT&CK sub-technique representing **Unix Shell** command execution.
 
 ## Bash
 
-A commonly used Unix/Linux command shell and scripting environment.
+A widely used Unix/Linux command shell and scripting environment.
 
 ## Auditd
 
-Linux auditing framework used to record security-relevant system activity.
+The Linux auditing framework used to record security-relevant system activity.
 
 ## `execve`
 
@@ -850,17 +875,17 @@ A Linux system call used to execute a program.
 
 ## `EXECVE`
 
-Audit record containing information about the command and arguments used during execution.
+An Auditd record containing information about command execution and arguments.
 
 ## `SYSCALL`
 
-Audit record containing information about the system call and execution context.
+An Auditd record containing information about the system call and execution context.
 
 ## `ausearch`
 
-Command-line utility used to search Linux Auditd logs.
+A command-line utility used to search Auditd records.
 
-## Detection Key
+## Audit Key
 
 A custom identifier such as:
 
@@ -868,80 +893,80 @@ A custom identifier such as:
 mitre_t1059_004
 ```
 
-used to efficiently search related Auditd events.
+used to locate related audit events.
 
 ---
 
 # 🌍 Real-World Applications
 
-The techniques demonstrated in this lab can be applied in real SOC environments.
-
-Examples include:
+The concepts demonstrated in this laboratory can be applied to:
 
 * Linux endpoint monitoring
+* SOC operations
 * Threat hunting
 * Incident response
+* SIEM detection engineering
+* Privilege escalation detection
+* SSH attack investigation
+* Post-exploitation detection
 * Malware investigation
 * Insider-threat monitoring
-* SSH attack investigation
-* Privilege escalation detection
-* Post-exploitation detection
-* SIEM correlation
-* MITRE ATT&CK-based detection engineering
+* MITRE ATT&CK-based detection
+* Security telemetry analysis
 
 ---
 
 # 🧪 Skills Demonstrated
 
-This lab demonstrates practical skills in:
+This laboratory demonstrates practical experience with:
 
 * Linux administration
 * Bash
 * Auditd
 * Linux security monitoring
 * System-call auditing
+* Endpoint telemetry
 * Log analysis
 * Detection engineering
 * MITRE ATT&CK
 * SOC investigation
 * Troubleshooting
-* Security documentation
 * Evidence collection
-* Incident-analysis methodology
+* Security documentation
+* Defensive security practices
 
 ---
 
 # 📸 Evidence Summary
 
-All screenshots are stored in the `screenshots/` directory.
+The laboratory currently contains **four practical screenshots**.
 
-| Evidence | Screenshot                            | Demonstrates              |
-| -------- | ------------------------------------- | ------------------------- |
-| 01       | `01-t1059-004-bash-execution.png`     | Controlled Bash execution |
-| 02       | `02-t1059-004-audit-rule.png`         | T1059.004 Auditd rule     |
-| 03       | `03-t1059-004-detection-evidence.png` | Detected Bash execution   |
-| 04       | `04-auditd-status.png`                | Auditd service health     |
-| 05       | `05-t1059-004-audit-log.png`          | Persistent audit evidence |
+| Evidence | Screenshot                            | Purpose                       |
+| -------- | ------------------------------------- | ----------------------------- |
+| 01       | `01-t1059-004-bash-execution.png`     | Controlled Bash execution     |
+| 02       | `02-t1059-004-audit-rule.png`         | Auditd detection rule         |
+| 03       | `03-t1059-004-detection-evidence.png` | T1059.004 detection telemetry |
+| 04       | `04-auditd-status.png`                | Auditd service status         |
 
 ---
 
 # 🔐 Security Evidence Hygiene
 
-Before committing this lab to GitHub, screenshots and logs should be reviewed for unnecessary sensitive information.
+Before publishing this laboratory to GitHub, screenshots and logs should be reviewed for unnecessary sensitive information.
 
 Check for:
 
 * Passwords
 * API keys
 * Access tokens
-* Private credentials
 * SSH private keys
+* Credentials
 * Personal information
 * Unnecessary internal IP addresses
-* Session identifiers
 * Sensitive host information
+* Session identifiers
 
-Do not commit files such as:
+Do not commit sensitive files such as:
 
 ```text
 .git-credentials
@@ -951,44 +976,60 @@ password files
 API tokens
 ```
 
-Only the evidence required to demonstrate the cybersecurity technique should be published.
+Only the evidence required to demonstrate the security technique should be published.
 
 ---
 
-# ✅ Lab Outcome
-
-The lab successfully demonstrated a complete defensive workflow for **MITRE ATT&CK T1059.004 — Unix Shell**.
-
-The workflow included:
+# 📋 Lab Completion Checklist
 
 ```text
-✔ Linux environment verification
-✔ Explicit Bash execution
-✔ Auditd troubleshooting
-✔ Auditd service recovery
-✔ Detection rule creation
-✔ Audit rule loading
-✔ Controlled telemetry generation
-✔ Audit event investigation
-✔ EXECVE analysis
-✔ SYSCALL analysis
-✔ Audit log verification
-✔ MITRE ATT&CK mapping
-✔ SOC detection analysis
-✔ False-positive consideration
-✔ Security hardening recommendations
-✔ Evidence documentation
+[✓] Linux environment verified
+[✓] Bash executable verified
+[✓] Controlled Bash execution performed
+[✓] Auditd troubleshooting completed
+[✓] Auditd service restored
+[✓] Auditd detection rule created
+[✓] Audit rule loaded
+[✓] T1059.004 telemetry generated
+[✓] Audit events investigated
+[✓] EXECVE event analyzed
+[✓] SYSCALL event analyzed
+[✓] MITRE ATT&CK mapping completed
+[✓] SOC detection considerations documented
+[✓] False-positive considerations documented
+[✓] Defensive recommendations documented
+[✓] Evidence screenshots documented
 ```
 
 ---
 
-# 🏁 Conclusion
+# 🏁 Lab Outcome
 
-This lab demonstrated how Unix shell execution can be simulated and monitored in a Linux environment using Auditd.
+The laboratory successfully demonstrated a complete defensive workflow for **MITRE ATT&CK T1059.004 — Unix Shell**.
 
-The exercise went beyond simply executing Bash commands by implementing a complete security-monitoring workflow. Auditd was configured to monitor Bash execution through the `execve` system call, and the resulting events were investigated using `ausearch`.
+The exercise included:
 
-The collected telemetry demonstrated how fields such as:
+```text
+Simulation
+    ↓
+Telemetry Collection
+    ↓
+Detection Rule
+    ↓
+Bash Execution Detection
+    ↓
+Audit Event Investigation
+    ↓
+MITRE ATT&CK Mapping
+    ↓
+SOC Analysis
+    ↓
+Security Documentation
+```
+
+Bash execution was performed in a controlled Linux environment and monitored using Auditd.
+
+The resulting telemetry included important fields such as:
 
 ```text
 EXECVE
@@ -999,24 +1040,22 @@ success=yes
 key=mitre_t1059_004
 ```
 
-can provide valuable endpoint evidence for SOC analysts.
+The laboratory also demonstrated practical troubleshooting when Auditd initially failed because its log directory was missing.
 
-The troubleshooting phase also demonstrated an important operational lesson: **security detection depends on reliable telemetry collection**.
-
-Overall, the lab provides practical experience with Linux auditing, detection engineering, MITRE ATT&CK mapping, SOC investigation, and security documentation.
+Overall, this lab provides hands-on experience with Linux security monitoring, endpoint telemetry, Auditd, detection engineering, MITRE ATT&CK mapping, SOC investigation, and security documentation.
 
 ---
 
 # 📁 Documentation Files
 
-| File                 | Purpose                                        |
+| File                 | Description                                    |
 | -------------------- | ---------------------------------------------- |
 | `README.md`          | Complete lab documentation and visual evidence |
-| `commands.md`        | Commands used throughout the lab               |
-| `notes.md`           | Technical notes and concepts                   |
+| `commands.md`        | Commands used during the laboratory            |
+| `notes.md`           | Technical notes and key concepts               |
 | `checklist.md`       | Lab completion checklist                       |
-| `security_report.md` | Formal security assessment/report              |
-| `screenshots/`       | Practical evidence collected during the lab    |
+| `security_report.md` | Formal security assessment                     |
+| `screenshots/`       | Practical laboratory screenshots               |
 
 ---
 
@@ -1026,7 +1065,7 @@ Overall, the lab provides practical experience with Linux auditing, detection en
 
 Cybersecurity / SOC Learning Portfolio
 
-**Focus Areas:**
+### Focus Areas
 
 * SOC Operations
 * Linux Security
@@ -1041,4 +1080,4 @@ Cybersecurity / SOC Learning Portfolio
 
 ## ⭐ Portfolio Note
 
-This lab is part of a hands-on cybersecurity portfolio focused on demonstrating practical security operations, Linux security monitoring, detection engineering, and MITRE ATT&CK-based analysis.
+This laboratory is part of a hands-on cybersecurity portfolio demonstrating practical skills in Linux security monitoring, endpoint telemetry, detection engineering, SOC investigation, MITRE ATT&CK mapping, and security documentation.
