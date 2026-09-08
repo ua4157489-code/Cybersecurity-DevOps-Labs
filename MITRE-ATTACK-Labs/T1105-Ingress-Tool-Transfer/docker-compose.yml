@@ -1,0 +1,20 @@
+services:
+  transfer-server:
+    image: nginx:alpine
+    container_name: t1105-transfer-server
+    volumes:
+      - ./server-files:/usr/share/nginx/html:ro
+    networks:
+      - t1105-lab
+
+  transfer-client:
+    image: curlimages/curl:latest
+    container_name: t1105-transfer-client
+    command: ["sleep", "infinity"]
+    networks:
+      - t1105-lab
+
+networks:
+  t1105-lab:
+    driver: bridge
+    internal: true

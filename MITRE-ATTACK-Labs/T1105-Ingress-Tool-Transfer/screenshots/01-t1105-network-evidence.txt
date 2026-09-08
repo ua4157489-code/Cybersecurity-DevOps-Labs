@@ -1,0 +1,62 @@
+[
+    {
+        "Name": "t1105-ingress-tool-transfer_t1105-lab",
+        "Id": "7457db6fe64616b4c0b7655e62a7a421457c5bf20787267bcc0f78f93e1f8c0c",
+        "Created": "2026-09-08T18:23:29.435865691+05:00",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": null,
+            "Config": [
+                {
+                    "Subnet": "172.21.0.0/16",
+                    "IPRange": "",
+                    "Gateway": "172.21.0.1"
+                }
+            ]
+        },
+        "Internal": true,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Options": {},
+        "Labels": {
+            "com.docker.compose.config-hash": "092fe28c56556500ec0a744141835ee0c1190e9f2db2861b1c7d2dacd8ef2e23",
+            "com.docker.compose.network": "t1105-lab",
+            "com.docker.compose.project": "t1105-ingress-tool-transfer",
+            "com.docker.compose.version": "5.5.1"
+        },
+        "Containers": {
+            "0b31ceaa08f08df5aae59990d423bd2f7c3827973cd504c7fc032a88d97f9341": {
+                "Name": "t1105-transfer-server",
+                "EndpointID": "ef6d97f7ffbf9365a7d43622ca90ed41ffab7ef54b806ff8cdcbc5c0b29e8379",
+                "MacAddress": "fa:27:34:9f:2a:10",
+                "IPv4Address": "172.21.0.3/16",
+                "IPv6Address": ""
+            },
+            "2a0d67d85eba3b47c6d2894de0a79b813b4711b6efb56c2e16974e12fe227c02": {
+                "Name": "t1105-transfer-client",
+                "EndpointID": "88e84bafd28a17c874050de607b71c8f288eed48b4a0cf482acc6bae3f1ca40c",
+                "MacAddress": "fe:f0:71:dc:3e:9f",
+                "IPv4Address": "172.21.0.2/16",
+                "IPv6Address": ""
+            }
+        },
+        "Status": {
+            "IPAM": {
+                "Subnets": {
+                    "172.21.0.0/16": {
+                        "IPsInUse": 5,
+                        "DynamicIPsAvailable": 65531
+                    }
+                }
+            }
+        }
+    }
+]

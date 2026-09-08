@@ -1,0 +1,16 @@
+===== FILE METADATA =====
+-rw-r--r--    1 curl_user curl_group     127 Sep  8 13:24 /tmp/t1105-test.txt
+  File: /tmp/t1105-test.txt
+  Size: 127       	Blocks: 8          IO Block: 4096   regular file
+Device: 4eh/78d	Inode: 152487      Links: 1
+Access: (0644/-rw-r--r--)  Uid: (  100/curl_user)   Gid: (  101/curl_group)
+Access: 2026-09-08 13:24:52.774404408 +0000
+Modify: 2026-09-08 13:24:49.258346930 +0000
+Change: 2026-09-08 13:24:49.258346930 +0000
+
+===== FILE HASH =====
+f6bb28ca837cdd942dd96c576288bfa1c649afb2f643d378d29cb8bff51458a4  /tmp/t1105-test.txt
+
+===== FILE CONTENT =====
+MITRE ATT&CK T1105 - Controlled Lab Test File
+This file is harmless laboratory data used to demonstrate Ingress Tool Transfer.
