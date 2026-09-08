@@ -1,0 +1,22 @@
+===== T1027.010 DOCKER ISOLATION EVIDENCE =====
+
+[CONTAINERS]
+NAMES               IMAGE          STATUS
+t1027-command-lab   ubuntu:24.04   Up 10 minutes
+t1027-log-monitor   ubuntu:24.04   Up 10 minutes
+
+[NETWORK]
+Name=t1027010-command-obfuscation_t1027-lab
+Driver=bridge
+Internal=true
+Subnet=172.22.0.0/16
+Gateway=172.22.0.1
+
+[CONTAINER IPs]
+/t1027-command-lab -> 172.22.0.3
+/t1027-log-monitor -> 172.22.0.2
+
+[OUTBOUND CONNECTIVITY TEST]
+EXPECTED: outbound connectivity blocked
+
+===== END EVIDENCE =====

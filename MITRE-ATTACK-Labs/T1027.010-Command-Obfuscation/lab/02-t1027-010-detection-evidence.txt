@@ -1,0 +1,27 @@
+===== T1027.010 DETECTION EVIDENCE =====
+
+[PROCESS TABLE]
+UID          PID    PPID  C STIME TTY          TIME CMD
+root           1       0  0 13:41 ?        00:00:00 sleep infinity
+root          83       0  0 13:47 ?        00:00:00 bash -c  while true; do     date "+%Y-%m-%d %H:%M:%S"     ps -eo pid,ppid,user,args     sleep 2 done 
+root         110       0  0 13:47 ?        00:00:00 sleep 20
+root         160      83  0 13:47 ?        00:00:00 sleep 2
+root         161       0 80 13:47 ?        00:00:00 bash -c  echo "===== T1027.010 DETECTION EVIDENCE ====="  echo echo "[PROCESS TABLE]" ps -ef  echo echo "[TEST SCRIPT]" cat /tmp/t1027_010_test.sh  echo echo "[HASH]" sha256sum /tmp/t1027_010_test.sh  echo echo "[OBFUSCATED COMMAND EXAMPLES]" echo "a=\"MITRE\"; b=\"T1027.010\"; echo \"\$a \$b controlled test\"" echo "export TECHNIQUE=\"T1027.010\"; printf \"%s\\n\" \"MITRE \$TECHNIQUE Command Obfuscation\"" echo "c1=\"M\"; c2=\"I\"; c3=\"TRE\"; printf \"%s\\n\" \"\$c1\$c2\$c3 T1027.010 controlled test\"" echo "cmd=\"ec\"\"ho\"; \$cmd \"MITRE T1027.010 reconstructed command\"" 
+root         167     161  0 13:47 ?        00:00:00 ps -ef
+
+[TEST SCRIPT]
+#!/usr/bin/env bash
+
+echo "MITRE T1027.010 controlled test"
+echo "Command Obfuscation laboratory"
+whoami
+uname -s
+
+[HASH]
+1af4518b2baa297751776b45a4a6ca6a88ddd88f535c1926b2b0e357104f0bfb  /tmp/t1027_010_test.sh
+
+[OBFUSCATED COMMAND EXAMPLES]
+a="MITRE"; b="T1027.010"; echo "$a $b controlled test"
+export TECHNIQUE="T1027.010"; printf "%s\n" "MITRE $TECHNIQUE Command Obfuscation"
+c1="M"; c2="I"; c3="TRE"; printf "%s\n" "$c1$c2$c3 T1027.010 controlled test"
+cmd="ec""ho"; $cmd "MITRE T1027.010 reconstructed command"

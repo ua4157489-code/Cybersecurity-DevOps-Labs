@@ -1,0 +1,16 @@
++ a=MITRE
++ b=T1027.010
++ echo 'MITRE T1027.010 controlled test'
+MITRE T1027.010 controlled test
++ export TECHNIQUE=T1027.010
++ TECHNIQUE=T1027.010
++ printf '%s\n' 'MITRE T1027.010 Command Obfuscation'
++ c1=M
+MITRE T1027.010 Command Obfuscation
++ c2=I
++ c3=TRE
++ printf '%s\n' 'MITRE T1027.010 controlled test'
++ cmd=echo
+MITRE T1027.010 controlled test
+MITRE T1027.010 reconstructed command
++ echo 'MITRE T1027.010 reconstructed command'

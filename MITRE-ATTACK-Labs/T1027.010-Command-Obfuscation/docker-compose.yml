@@ -1,0 +1,19 @@
+services:
+  command-lab:
+    image: ubuntu:24.04
+    container_name: t1027-command-lab
+    command: ["sleep", "infinity"]
+    networks:
+      - t1027-lab
+
+  log-monitor:
+    image: ubuntu:24.04
+    container_name: t1027-log-monitor
+    command: ["sleep", "infinity"]
+    networks:
+      - t1027-lab
+
+networks:
+  t1027-lab:
+    driver: bridge
+    internal: true
