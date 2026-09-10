@@ -35,6 +35,7 @@ them — every lab here was built, broken, debugged, and fixed by hand.
 | 01 | [Log4Shell — Apache Solr RCE](./01-Log4Shell-CVE-2021-44228) | CVE-2021-44228 | ✅ Complete | Remote Code Execution (root) |
 | 02 | [Spring4Shell — Tomcat/Spring MVC RCE](./02-Spring4Shell-CVE-2022-22965) | CVE-2022-22965 | ✅ Complete | Remote Code Execution (root) |
 | 03 | [Fastjson — JSON Deserialization RCE](./03-Fastjson-CVE-2017-18349) | CVE-2017-18349 | ✅ Complete | Remote Code Execution (root) |
+| 04 | [Struts2 — S2-045 RCE](./04-Struts2-S2-045-CVE-2017-5638) | CVE-2017-5638 | ✅ Complete | Remote Code Execution (root) |
 
 > Each lab folder is self-contained: `README.md` (full writeup), `screenshots/` (visual evidence),
 > `raw-output/` (unedited terminal logs), and any PoC code used.
