@@ -39,6 +39,7 @@ them — every lab here was built, broken, debugged, and fixed by hand.
 | 05 | [Drupalgeddon2 — Drupal RCE](./05-Drupalgeddon2-CVE-2018-7600) | CVE-2018-7600 | ✅ Complete | Remote Code Execution (root) |
 | 06 | [Ghostcat — Apache Tomcat AJP File Read/RCE](https://github.com/ua4157489-code/Cybersecurity-DevOps-Labs/blob/main/Red-Team-Labs/06-Ghostcat-CVE-2020-1938) | CVE-2020-1938 | ✅ Complete | File Read / Remote Code Execution |
 | 07 | [Jenkins — CLI Arbitrary File Read/RCE](https://github.com/ua4157489-code/Cybersecurity-DevOps-Labs/blob/main/Red-Team-Labs/07-Jenkins-CVE-2017-1000353) | CVE-2017-1000353 | ✅ Complete | Arbitrary File Read / Remote Code Execution |
+| 08 | [GitLab — ExifTool Pre-Auth RCE](./08-GitLab-CVE-2021-22205) | CVE-2021-22205 | ✅ Complete | Remote Code Execution (git) |
 
 > Each lab folder is self-contained: `README.md` (full writeup), `screenshots/` (visual evidence),
 > `raw-output/` (unedited terminal logs), and any PoC code used.
