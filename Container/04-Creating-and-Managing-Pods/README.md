@@ -79,6 +79,24 @@ All screenshots are stored in the [`screenshots/`](./screenshots) directory. Eac
 
 > **Note:** Screenshot files should be placed in the `screenshots/` directory using the exact filenames above so the table renders correctly on GitHub.
 
+### 1. Environment Verification
+![Podman environment verification](./screenshots/01-podman-environment.png)
+
+### 2. Pod Creation & Nginx
+![Pod creation and Nginx test](./screenshots/02-pod-and-nginx.png)
+
+### 3. Redis & Shared Networking
+![Redis test and network verification](./screenshots/03-redis-network.png)
+
+### 4. Pod Inspection
+![Pod inspection output](./screenshots/04-pod-inspection.png)
+
+### 5. Shared Volume Finding
+![Shared volume container failure](./screenshots/05-shared-volume-finding.png)
+
+### 6. Cleanup
+![Cleanup verification](./screenshots/06-cleanup.png)
+
 ## 🧹 Cleanup
 
 ```bash
