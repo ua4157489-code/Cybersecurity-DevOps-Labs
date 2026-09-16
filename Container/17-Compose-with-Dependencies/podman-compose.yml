@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  redis:
+    image: docker.io/library/redis:alpine
+    ports:
+      - "6379:6379"
+
+  webapp:
+    image: docker.io/library/nginx:alpine
+    ports:
+      - "8080:80"
+    depends_on:
+      - redis
