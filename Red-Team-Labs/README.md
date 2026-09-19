@@ -44,6 +44,8 @@ them — every lab here was built, broken, debugged, and fixed by hand.
 | 10 | [Apache Path Traversal + RCE](./10-Apache-CVE-2021-41773) | CVE-2021-41773 / CVE-2021-42013 | ✅ Complete | File Disclosure + RCE (daemon) |
 | 11 | [Heartbleed — OpenSSL Information Disclosure](https://github.com/ua4157489-code/Cybersecurity-DevOps-Labs/blob/main/Red-Team-Labs/11-Heartbleed-CVE-2014-0160) | CVE-2014-0160 | ✅ Complete | Sensitive Information Disclosure |
 | 12 | [ImageTragick — ImageMagick RCE](https://github.com/ua4157489-code/Cybersecurity-DevOps-Labs/blob/main/Red-Team-Labs/12-ImageTragick-CVE-2016-3714) | CVE-2016-3714 | ✅ Complete | Remote Code Execution (unauthenticated) |
+| 13 | [PHP-CGI — Argument Injection RCE](https://github.com/ua4157489-code/Cybersecurity-DevOps-Labs/blob/main/Red-Team-Labs/13-PHP-CGI-CVE-2012-1823) | CVE-2012-1823 | ✅ Complete | Remote Code Execution (unauthenticated) |
+| 14 | [Apache Solr — XXE Information Disclosure](https://github.com/ua4157489-code/Cybersecurity-DevOps-Labs/blob/main/Red-Team-Labs/14-Solr-XXE-CVE-2017-12629) | CVE-2017-12629 | ✅ Complete | Arbitrary File Disclosure (Blind XXE) |
 
 > Each lab folder is self-contained: `README.md` (full writeup), `screenshots/` (visual evidence),
 > `raw-output/` (unedited terminal logs), and any PoC code used.
