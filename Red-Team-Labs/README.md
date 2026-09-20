@@ -46,6 +46,8 @@ them — every lab here was built, broken, debugged, and fixed by hand.
 | 12 | [ImageTragick — ImageMagick RCE](https://github.com/ua4157489-code/Cybersecurity-DevOps-Labs/blob/main/Red-Team-Labs/12-ImageTragick-CVE-2016-3714) | CVE-2016-3714 | ✅ Complete | Remote Code Execution (unauthenticated) |
 | 13 | [PHP-CGI — Argument Injection RCE](https://github.com/ua4157489-code/Cybersecurity-DevOps-Labs/blob/main/Red-Team-Labs/13-PHP-CGI-CVE-2012-1823) | CVE-2012-1823 | ✅ Complete | Remote Code Execution (unauthenticated) |
 | 14 | [Apache Solr — XXE Information Disclosure](https://github.com/ua4157489-code/Cybersecurity-DevOps-Labs/blob/main/Red-Team-Labs/14-Solr-XXE-CVE-2017-12629) | CVE-2017-12629 | ✅ Complete | Arbitrary File Disclosure (Blind XXE) |
+| 15 | [ThinkPHP — Argument Construct RCE](https://github.com/ua4157489-code/Cybersecurity-DevOps-Labs/blob/main/Red-Team-Labs/15-ThinkPHP-CVE-2018-20062) | CVE-2018-20062 | ✅ Complete | Remote Code Execution (unauthenticated, CISA KEV) |
+| 16 | [Shellshock — Bash Function Parsing RCE](https://github.com/ua4157489-code/Cybersecurity-DevOps-Labs/blob/main/Red-Team-Labs/16-Shellshock-CVE-2014-6271) | CVE-2014-6271 | ✅ Complete | Remote Code Execution (unauthenticated) |
 
 > Each lab folder is self-contained: `README.md` (full writeup), `screenshots/` (visual evidence),
 > `raw-output/` (unedited terminal logs), and any PoC code used.
