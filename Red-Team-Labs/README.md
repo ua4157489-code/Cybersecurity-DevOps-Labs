@@ -1,141 +1,86 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:8E2DE2,100:FF0066&height=220&section=header&text=Red%20Team%20Labs&fontSize=60&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Offensive%20Security%20%7C%20Exploit%20Development%20%7C%20Adversary%20Emulation&descAlignY=55&descSize=18" width="100%"/>
+![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=28&duration=3000&pause=1000&color=00FF41&center=true&vCenter=true&width=800&lines=Red+Team+Labs;16+CVEs+Weaponized+%26+Documented;RCE+%7C+XXE+%7C+Deserialization+%7C+Info+Disclosure;Docker-Based+Vulnerability+Research)
 
-<img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&duration=3000&pause=800&color=FF0055&center=true&vCenter=true&width=700&lines=Break+it.+Understand+it.+Fix+it.;Hands-on+CVE+exploitation+labs;Every+vuln%2C+self-hosted+%26+reproducible;RCE+%7C+Privilege+Escalation+%7C+AD+Attacks" alt="Typing SVG" />
+![Labs](https://img.shields.io/badge/Labs-16-brightgreen?style=for-the-badge&logo=hackthebox&logoColor=white)
+![CVEs](https://img.shields.io/badge/CVEs%20Exploited-16-red?style=for-the-badge&logo=cve&logoColor=white)
+![Docker](https://img.shields.io/badge/Environment-Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Active-success?style=for-the-badge)
 
-<br/>
-
-![Labs](https://img.shields.io/badge/Labs-Growing-critical?style=for-the-badge&logo=hackthebox&logoColor=white)
-![Focus](https://img.shields.io/badge/Focus-Offensive%20Security-red?style=for-the-badge&logo=metasploit&logoColor=white)
-![Status](https://img.shields.io/badge/Status-Active-brightgreen?style=for-the-badge&logo=statuspage&logoColor=white)
-![License](https://img.shields.io/badge/Use-Educational%20Only-yellow?style=for-the-badge&logo=readthedocs&logoColor=white)
+**A hands-on offensive security lab series — each entry is a fully exploited, evidenced, and documented CVE.**
+Every lab includes a full writeup, raw command output, and screenshot evidence for every stage of exploitation.
 
 </div>
 
 ---
 
-## What This Is
-
-A collection of **self-hosted, fully reproducible exploitation labs** — each one takes a real CVE
-or attack technique from zero to confirmed impact, documented end-to-end: recon, exploit chain,
-every bug hit along the way, and remediation. No copy-pasted exploit scripts without understanding
-them — every lab here was built, broken, debugged, and fixed by hand.
-
-<div align="center">
-<img src="https://skillicons.dev/icons?i=linux,docker,bash,python,java,git&theme=dark" />
-</div>
-
----
-
-## Lab Index
+## 📊 Lab Index
 
 | # | Lab | CVE / Technique | Status | Impact |
-|---|---|---|:---:|---|
-| 01 | [Log4Shell — Apache Solr RCE](./01-Log4Shell-CVE-2021-44228) | CVE-2021-44228 | ✅ Complete | Remote Code Execution (root) |
-| 02 | [Spring4Shell — Tomcat/Spring MVC RCE](./02-Spring4Shell-CVE-2022-22965) | CVE-2022-22965 | ✅ Complete | Remote Code Execution (root) |
-| 03 | [Fastjson — JSON Deserialization RCE](./03-Fastjson-CVE-2017-18349) | CVE-2017-18349 | ✅ Complete | Remote Code Execution (root) |
-| 04 | [Struts2 — S2-045 RCE](./04-Struts2-S2-045-CVE-2017-5638) | CVE-2017-5638 | ✅ Complete | Remote Code Execution (root) |
-| 05 | [Drupalgeddon2 — Drupal RCE](./05-Drupalgeddon2-CVE-2018-7600) | CVE-2018-7600 | ✅ Complete | Remote Code Execution (root) |
-| 06 | [Ghostcat — Apache Tomcat AJP File Read/RCE](https://github.com/ua4157489-code/Cybersecurity-DevOps-Labs/blob/main/Red-Team-Labs/06-Ghostcat-CVE-2020-1938) | CVE-2020-1938 | ✅ Complete | File Read / Remote Code Execution |
-| 07 | [Jenkins — CLI Arbitrary File Read/RCE](https://github.com/ua4157489-code/Cybersecurity-DevOps-Labs/blob/main/Red-Team-Labs/07-Jenkins-CVE-2017-1000353) | CVE-2017-1000353 | ✅ Complete | Arbitrary File Read / Remote Code Execution |
-| 08 | [GitLab — ExifTool Pre-Auth RCE](./08-GitLab-CVE-2021-22205) | CVE-2021-22205 | ✅ Complete | Remote Code Execution (git) |
-| 09 | [SambaCry — Samba RCE](./09-SambaCry-CVE-2017-7494) | CVE-2017-7494 | ✅ Complete | Remote Code Execution |
-| 10 | [Apache Path Traversal + RCE](./10-Apache-CVE-2021-41773) | CVE-2021-41773 / CVE-2021-42013 | ✅ Complete | File Disclosure + RCE (daemon) |
-| 11 | [Heartbleed — OpenSSL Information Disclosure](https://github.com/ua4157489-code/Cybersecurity-DevOps-Labs/blob/main/Red-Team-Labs/11-Heartbleed-CVE-2014-0160) | CVE-2014-0160 | ✅ Complete | Sensitive Information Disclosure |
-| 12 | [ImageTragick — ImageMagick RCE](https://github.com/ua4157489-code/Cybersecurity-DevOps-Labs/blob/main/Red-Team-Labs/12-ImageTragick-CVE-2016-3714) | CVE-2016-3714 | ✅ Complete | Remote Code Execution (unauthenticated) |
-| 13 | [PHP-CGI — Argument Injection RCE](https://github.com/ua4157489-code/Cybersecurity-DevOps-Labs/blob/main/Red-Team-Labs/13-PHP-CGI-CVE-2012-1823) | CVE-2012-1823 | ✅ Complete | Remote Code Execution (unauthenticated) |
-| 14 | [Apache Solr — XXE Information Disclosure](https://github.com/ua4157489-code/Cybersecurity-DevOps-Labs/blob/main/Red-Team-Labs/14-Solr-XXE-CVE-2017-12629) | CVE-2017-12629 | ✅ Complete | Arbitrary File Disclosure (Blind XXE) |
-| 15 | [ThinkPHP — Argument Construct RCE](https://github.com/ua4157489-code/Cybersecurity-DevOps-Labs/blob/main/Red-Team-Labs/15-ThinkPHP-CVE-2018-20062) | CVE-2018-20062 | ✅ Complete | Remote Code Execution (unauthenticated, CISA KEV) |
-| 16 | [Shellshock — Bash Function Parsing RCE](https://github.com/ua4157489-code/Cybersecurity-DevOps-Labs/blob/main/Red-Team-Labs/16-Shellshock-CVE-2014-6271) | CVE-2014-6271 | ✅ Complete | Remote Code Execution (unauthenticated) |
+|---|-----|------------------|--------|--------|
+| 01 | [Log4Shell — Apache Solr RCE](01-Log4Shell-CVE-2021-44228) | `CVE-2021-44228` | ✅ | 🔴 RCE (root) |
+| 02 | [Spring4Shell — Tomcat/Spring MVC RCE](02-Spring4Shell-CVE-2022-22965) | `CVE-2022-22965` | ✅ | 🔴 RCE (root) |
+| 03 | [Fastjson — JSON Deserialization RCE](03-Fastjson-CVE-2017-18349) | `CVE-2017-18349` | ✅ | 🔴 RCE (root) |
+| 04 | [Struts2 — S2-045 RCE](04-Struts2-S2-045-CVE-2017-5638) | `CVE-2017-5638` | ✅ | 🔴 RCE (root) |
+| 05 | [Drupalgeddon2 — Drupal RCE](05-Drupalgeddon2-CVE-2018-7600) | `CVE-2018-7600` | ✅ | 🔴 RCE (root) |
+| 06 | [Ghostcat — Tomcat AJP File Read/RCE](06-Ghostcat-CVE-2020-1938) | `CVE-2020-1938` | ✅ | 🟠 File Read / RCE |
+| 07 | [Jenkins — CLI Arbitrary File Read/RCE](07-Jenkins-CVE-2017-1000353) | `CVE-2017-1000353` | ✅ | 🟠 File Read / RCE |
+| 08 | [GitLab — ExifTool Pre-Auth RCE](08-GitLab-CVE-2021-22205) | `CVE-2021-22205` | ✅ | 🔴 RCE (git) |
+| 09 | [SambaCry — Samba RCE](09-SambaCry-CVE-2017-7494) | `CVE-2017-7494` | ✅ | 🔴 RCE |
+| 10 | [Apache Path Traversal + RCE](10-Apache-CVE-2021-41773) | `CVE-2021-41773` / `CVE-2021-42013` | ✅ | 🔴 File Disclosure + RCE |
+| 11 | [Heartbleed — OpenSSL Info Disclosure](11-Heartbleed-CVE-2014-0160) | `CVE-2014-0160` | ✅ | 🟡 Info Disclosure (RSA key recovered) |
+| 12 | [ImageTragick — ImageMagick RCE](12-ImageTragick-CVE-2016-3714) | `CVE-2016-3714` | ✅ | 🔴 RCE (unauthenticated) |
+| 13 | [PHP-CGI — Argument Injection RCE](13-PHP-CGI-CVE-2012-1823) | `CVE-2012-1823` | ✅ | 🔴 RCE (unauthenticated) |
+| 14 | [Apache Solr — XXE Info Disclosure](14-Solr-XXE-CVE-2017-12629) | `CVE-2017-12629` | ✅ | 🟡 Arbitrary File Disclosure (Blind XXE) |
+| 15 | [ThinkPHP — Argument Construct RCE](15-ThinkPHP-CVE-2018-20062) | `CVE-2018-20062` | ✅ | 🔴 RCE (unauthenticated, **CISA KEV**) |
+| 16 | [Shellshock — Bash Function Parsing RCE](16-Shellshock-CVE-2014-6271) | `CVE-2014-6271` | ✅ | 🔴 RCE (unauthenticated) |
 
-> Each lab folder is self-contained: `README.md` (full writeup), `screenshots/` (visual evidence),
-> `raw-output/` (unedited terminal logs), and any PoC code used.
+🔴 Critical/RCE &nbsp;&nbsp; 🟠 High (File Disclosure/RCE) &nbsp;&nbsp; 🟡 Medium-High (Info Disclosure)
 
 ---
 
-## Attack Surface Covered So Far
+<details>
+<summary><b>🗂️ Browse by category</b> (click to expand)</summary>
+<br>
 
-```mermaid
-mindmap
-  root((Red Team Labs))
-    Web/App Layer
-      Log4Shell RCE
-      Deserialization
-    Active Directory
-      Kerberoasting
-      AS-REP Roasting
-      BloodHound Enumeration
-    Post-Exploitation
-      Privilege Escalation
-      Lateral Movement
-    Infrastructure
-      Container Escapes
-      Network Pivoting
+### Remote Code Execution
+[Log4Shell](01-Log4Shell-CVE-2021-44228) · [Spring4Shell](02-Spring4Shell-CVE-2022-22965) · [Fastjson](03-Fastjson-CVE-2017-18349) · [Struts2 S2-045](04-Struts2-S2-045-CVE-2017-5638) · [Drupalgeddon2](05-Drupalgeddon2-CVE-2018-7600) · [GitLab ExifTool](08-GitLab-CVE-2021-22205) · [SambaCry](09-SambaCry-CVE-2017-7494) · [ImageTragick](12-ImageTragick-CVE-2016-3714) · [PHP-CGI](13-PHP-CGI-CVE-2012-1823) · [ThinkPHP](15-ThinkPHP-CVE-2018-20062) · [Shellshock](16-Shellshock-CVE-2014-6271)
+
+### File Disclosure / Path Traversal
+[Ghostcat](06-Ghostcat-CVE-2020-1938) · [Jenkins CLI](07-Jenkins-CVE-2017-1000353) · [Apache Path Traversal](10-Apache-CVE-2021-41773)
+
+### Information Disclosure
+[Heartbleed](11-Heartbleed-CVE-2014-0160) — includes full RSA private key recovery
+[Apache Solr XXE](14-Solr-XXE-CVE-2017-12629) — blind XXE via error-based exfiltration
+
+</details>
+
+---
+
+## 📁 Lab Structure
+
+Each lab folder is self-contained:
+- `README.md` — full writeup with stages, screenshots, and impact analysis
+- `findings.md` — numbered findings with severity ratings
+- `methodology.md` — step-by-step attack process and reasoning
+- `remediation.md` — fixes and defense-in-depth recommendations
+- `commands.md` — every command run, for full reproducibility
+- `screenshots/` — visual evidence for every exploitation stage
+- `raw-output/` — captured command/HTTP output backing every claim
+- `vulhub/` — the Docker-based vulnerable environment used
+
+## 🛠️ Workflow
+
+```
+recon → confirm vulnerability → exploit → multi-channel verification → document → commit
 ```
 
----
-
-## How a Lab Is Built
-
-```mermaid
-flowchart LR
-    A[Pick a CVE / Technique] --> B[Stand up vulnerable target<br/>Docker / VM]
-    B --> C[Recon & confirm<br/>vulnerable version]
-    C --> D[Build exploit chain]
-    D --> E{Works?}
-    E -- No, debug it --> D
-    E -- Yes --> F[Capture evidence<br/>screenshots + raw output]
-    F --> G[Document methodology<br/>+ remediation]
-    G --> H[Push to repo]
-```
-
-Every lab documents the **real debugging path** — tooling quirks, networking gotchas, version
-mismatches — not just the clean happy-path exploit. That's usually where the actual learning is.
-
----
-
-## Methodology
-
-Each lab follows the same structure for consistency:
-
-1. **Recon** — identify the vulnerable component and confirm exploitability
-2. **Isolation Check** — verify blast radius before touching anything (host mounts, network scope)
-3. **Injection / Exploitation** — build and fire the actual exploit chain
-4. **Evidence** — screenshots + raw terminal output, unedited
-5. **Remediation** — how the vulnerability is actually fixed in production
-
----
-
-## Environment
-
-<div align="center">
-
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=flat-square&logo=docker&logoColor=white)
-![KVM](https://img.shields.io/badge/KVM%2Flibvirt-FF6600?style=flat-square&logo=linux&logoColor=white)
-![Kali](https://img.shields.io/badge/Kali%20Linux-557C94?style=flat-square&logo=kalilinux&logoColor=white)
-![Vulhub](https://img.shields.io/badge/Vulhub-Targets-black?style=flat-square)
-
-</div>
-
-All labs run **fully self-hosted** — no cloud infrastructure, no shared targets. Vulnerable
-services are containerized (Vulhub) or run as isolated KVM/libvirt VMs, with network isolation
-verified before any exploitation begins.
-
----
-
-## Disclaimer
-
-> Every lab in this repository is performed against **deliberately vulnerable, self-hosted
-> targets** on an isolated local network, for educational purposes only. No production systems,
-> third-party infrastructure, or external targets are involved in any exercise documented here.
+Every RCE finding is verified through **at least two independent channels** (e.g. direct response output *and* an out-of-band file-drop confirmed via `docker exec`) — never relying solely on what the application chooses to display back.
 
 ---
 
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:FF0066,100:8E2DE2&height=100&section=footer" width="100%"/>
-
-**⭐ More labs added as they're completed — check the index above for progress.**
+⚠️ **All targets are intentionally vulnerable Docker environments (Vulhub / purpose-built images), run in isolated local containers for educational research only.**
 
 </div>
