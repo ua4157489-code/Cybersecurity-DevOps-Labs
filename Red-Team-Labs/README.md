@@ -39,6 +39,86 @@ Every lab includes a full writeup, raw command output, and screenshot evidence f
 
 ---
 
+## 📈 Vulnerability Class Breakdown
+
+```mermaid
+pie showData
+    title 16 Labs by Vulnerability Class
+    "Remote Code Execution" : 11
+    "File Disclosure / Path Traversal" : 3
+    "Information Disclosure" : 2
+```
+
+## 🌳 Labs by Root Cause
+
+```mermaid
+flowchart TD
+    Root[16 CVEs Exploited] --> Deser[Deserialization]
+    Root --> Inj[Injection]
+    Root --> Parse[Parser Flaws]
+    Root --> Misc[Memory / Protocol Bugs]
+
+    Deser --> L1[Log4Shell]
+    Deser --> L3[Fastjson]
+    Deser --> L9[SambaCry]
+
+    Inj --> L2[Spring4Shell]
+    Inj --> L4[Struts2 S2-045]
+    Inj --> L5[Drupalgeddon2]
+    Inj --> L13[PHP-CGI]
+    Inj --> L15[ThinkPHP]
+
+    Parse --> L14[Solr XXE]
+    Parse --> L16[Shellshock]
+    Parse --> L12[ImageTragick]
+
+    Misc --> L11[Heartbleed]
+    Misc --> L6[Ghostcat]
+    Misc --> L10[Apache Path Traversal]
+
+    style Root fill:#1a1a1a,stroke:#00FF41,stroke-width:2px,color:#00FF41
+    style Deser fill:#2a0a0a,stroke:#ff4444,color:#fff
+    style Inj fill:#2a1a0a,stroke:#ff9944,color:#fff
+    style Parse fill:#0a1a2a,stroke:#4499ff,color:#fff
+    style Misc fill:#1a0a2a,stroke:#aa44ff,color:#fff
+```
+
+## 🔁 Exploitation Methodology
+
+```mermaid
+flowchart LR
+    A[Recon] --> B[Confirm Vulnerability]
+    B --> C[Exploit]
+    C --> D1[Direct Response Channel]
+    C --> D2[Blind File-Drop Channel]
+    D1 --> E[Multi-Channel Verified]
+    D2 --> E
+    E --> F[Document: findings / methodology / remediation]
+    F --> G[Screenshot Evidence]
+    G --> H[Commit and Push]
+
+    style A fill:#0a1a2a,stroke:#4499ff,color:#fff
+    style E fill:#0a2a0a,stroke:#00FF41,color:#fff
+    style H fill:#1a1a1a,stroke:#00FF41,color:#00FF41
+```
+
+## 📅 Severity Timeline (by CVE disclosure year)
+
+```mermaid
+timeline
+    title CVE Disclosure Years Represented in This Series
+    2012 : PHP-CGI (CVE-2012-1823)
+    2014 : Heartbleed (CVE-2014-0160) : Shellshock (CVE-2014-6271)
+    2016 : ImageTragick (CVE-2016-3714)
+    2017 : Log4Shell chain gadgets : Fastjson : Struts2 S2-045 : Jenkins CLI : SambaCry : Solr XXE
+    2018 : Drupalgeddon2 : ThinkPHP RCE
+    2020 : Ghostcat
+    2021 : GitLab ExifTool : Apache Path Traversal : Log4Shell
+    2022 : Spring4Shell
+```
+
+---
+
 <details>
 <summary><b>🗂️ Browse by category</b> (click to expand)</summary>
 <br>
@@ -68,12 +148,6 @@ Each lab folder is self-contained:
 - `screenshots/` — visual evidence for every exploitation stage
 - `raw-output/` — captured command/HTTP output backing every claim
 - `vulhub/` — the Docker-based vulnerable environment used
-
-## 🛠️ Workflow
-
-```
-recon → confirm vulnerability → exploit → multi-channel verification → document → commit
-```
 
 Every RCE finding is verified through **at least two independent channels** (e.g. direct response output *and* an out-of-band file-drop confirmed via `docker exec`) — never relying solely on what the application chooses to display back.
 
